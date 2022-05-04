@@ -1,0 +1,19 @@
+<script>
+
+   //Print elements after the first zero.
+   const array = [1, 2, 0, 4, 0];
+   let findIndex = null;
+
+   for (let i = 0; i < array.length; i++) {
+      if (array[i] === 0) {
+         findIndex = i + 1;
+         break;
+      }
+   }
+   let b = findIndex;
+   for (b; b < array.length; b++) {
+      console.log(array[b]);
+   }
+
+
+</script>
