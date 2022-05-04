@@ -1,0 +1,40 @@
+<script>
+   const arr = [-1, 2, -3];
+   const Array = {
+      print: function (arr) {
+         for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+         }
+      },
+      sum: function (arr) {
+         let b = 0
+         for (let i = 0; i < arr.length; i++) {
+            b += arr[i];
+         }
+         return b;
+      },
+      countPositive: function (arr) {
+
+         let posNum = 0;
+         for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+               posNum++;
+            }
+         }
+         return posNum;
+      },
+      countNegative: function (arr) {
+         let negNum = 0;
+         for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 0)
+               negNum++;
+         }
+         return negNum;
+      },
+   }
+
+   Array.print(arr);
+   console.log(Array.sum(arr));
+   console.log(Array.countPositive(arr));
+   console.log(Array.countNegative(arr));
+</script>
