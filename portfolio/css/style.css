@@ -1,0 +1,138 @@
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+}
+
+img {
+   max-width: 100%;
+   /* height: auto; */
+}
+
+body {
+   font-family: 'Jost', Arial, Helvetica sans-serif;
+   font-size: 18px;
+   font-weight: normal;
+   line-height: 1.3;
+   color: black;
+   /* background-color: ; */
+}
+
+.container {
+   margin: 0 auto;
+   padding: 0 15px;
+}
+
+/* navigation style   */
+
+header {
+   display: none;
+}
+
+.header_info {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
+}
+
+.logo {
+   font-family: 'Oleo Script Swash Caps', cursive, Arial, Helvetica sans-serif;
+   font-size: 3.5rem;
+   display: block;
+}
+
+.logo,
+.nav_info a,
+.social_info a,
+.decoration a {
+   text-decoration: none;
+}
+
+.nav_info,
+.decoration {
+   list-style: none;
+}
+
+/* .navigation {
+   flex-grow: 1;
+} */
+
+.nav_info {
+   display: flex;
+   justify-content: center;
+}
+
+.nav_info li {
+   margin: 0 15px;
+}
+
+/* aside style */
+
+aside {
+   width: 400px;
+   position: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
+   padding: 100px 70px;
+}
+
+.sidebar {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   height: 100%;
+   position: relative;
+}
+
+.aside_vertical {
+
+   width: 2rem;
+   height: 2rem;
+   background-repeat: repeat-y;
+}
+
+.aside_img,
+.aside_img_secong {
+   width: 3rem;
+   height: 3rem;
+
+}
+
+.aside_img {
+   position: absolute;
+   top: 15%;
+   left: 115%;
+}
+
+.aside_img_secong {
+   position: absolute;
+   bottom: 14%;
+   left: 115%;
+}
+
+.nav_aside_style {
+   padding: 0;
+   font-size: 1.5rem;
+   height: 100%;
+}
+
+.decoration li {
+   margin: 18px 0;
+   letter-spacing: 3px;
+   text-align: center;
+}
+
+.decoration a:hover {
+   color: rgb(71 158 37);
+   font-weight: bold;
+}
+
+.decoration img {
+   width: 2rem;
+   height: 2rem;
+   margin-left: 1rem;
+}
