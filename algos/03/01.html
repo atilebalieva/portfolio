@@ -1,3 +1,13 @@
 <script>
+   const ask = prompt('Please, enter a number');
+   const askNum = parseInt(ask);
+
+   if (!isNaN(askNum)) {
+      alert('Number is entered')
+   } else if (ask.length === 0) {
+      alert('Please, enter a number');
+   } else {
+      alert('Not a number');
+   }
 
 </script>
