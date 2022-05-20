@@ -6,7 +6,7 @@
 
 img {
    max-width: 100%;
-   /* height: auto; */
+   height: auto;
 }
 
 body {
@@ -15,7 +15,8 @@ body {
    font-weight: normal;
    line-height: 1.3;
    color: black;
-   background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
+  
+   
 }
 
 .container {
@@ -33,13 +34,31 @@ header {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
+background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
+}
+
+main {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
 }
 
 .logo {
    font-family: 'Oleo Script Swash Caps', cursive, Arial, Helvetica sans-serif;
    font-size: 3.5rem;
    display: block;
+   position: relative;
+}
+
+.dot {
+   display: block;
+   border-radius: 50%;
+   width: 10px;
+   height: 10px;
+   background-color: red;
+   position: absolute;
+   top: 75%;
+   right: -16%
 }
 
 .logo,
@@ -47,6 +66,11 @@ header {
 .social_info a,
 .decoration a {
    text-decoration: none;
+}
+
+.logo span,
+.decoration a  {
+   color: #3e273e;
 }
 
 .nav_info,
@@ -70,17 +94,14 @@ header {
 /* aside style */
 
 aside {
-   width: 400px;
+ /*  display: none;*/
+   width: 25%;
    position: fixed;
    top: 0;
    left: 0;
    bottom: 0;
    padding: 100px 70px;
-   background: blanchedalmond;
-   background: url(../images/tropical.png);
-   background-repeat: repeat-y;
-   background-size: 10%;
-   background-position: 100%;
+   background: linear-gradient(to right, #dad3e4 0%, #fff 50%, #f1e1f5 100%);
 }
 
 .sidebar {
@@ -99,22 +120,24 @@ aside {
 }
 
 .aside_img,
-.aside_img_secong {
+.aside_img_secong,
+.aside_img_third {
    width: 3rem;
    height: 3rem;
-
+   position: absolute;
+   z-index: 1;
+   left: 23%;
 }
 
 .aside_img {
-   position: absolute;
    top: 15%;
-   left: 115%;
 }
 
 .aside_img_secong {
-   position: absolute;
-   bottom: 14%;
-   left: 115%;
+   bottom: 15%;
+}
+.aside_img_third {
+top: 50%;
 }
 
 .nav_aside_style {
@@ -138,4 +161,50 @@ aside {
    width: 2rem;
    height: 2rem;
    margin-left: 1rem;
+}
+
+/*main_content*/ 
+
+.main_content {
+width: 75%;
+position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #fff6fe 0%, #fff 50%, #f6efef 100%);
+}
+
+.main_page {
+   display: flex;
+}
+
+.main_header {
+   width: 40%;
+   margin: 10rem 4rem;
+}
+
+.self_rep {
+   font-size: 5rem;
+   text-transform: uppercase;
+   font-family: 'Roboto', sans-serif;
+   line-height: 4.5rem;
+   margin: 2rem 0;
+}
+
+.self_rep_line {
+   display: block;
+   width: 100%;
+   height: 12px;
+   background-color: red;
+   border-radius: 10px;
+}
+
+.self_text {
+   text-align: justify;
+}
+
+.main_img {
+   display: block;
+   position: absolute;
+   top: 30%;
 }
