@@ -20,7 +20,6 @@ body {
    font-weight: normal;
    line-height: 1.3;
    color: black;
-   text-align: justify;
 }
 
 .container {
@@ -38,7 +37,13 @@ header {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
+background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
+}
+
+main {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
 }
 
 main {
@@ -73,7 +78,11 @@ main {
 }
 
 .logo span,
+<<<<<<< HEAD
 .decoration a {
+=======
+.decoration a  {
+>>>>>>> 4e1328e (Add updated portfolio)
    color: #3e273e;
 }
 
@@ -98,7 +107,11 @@ main {
 /* aside style */
 
 aside {
+<<<<<<< HEAD
    /*  display: none;*/
+=======
+ /*  display: none;*/
+>>>>>>> 4e1328e (Add updated portfolio)
    width: 25%;
    position: fixed;
    top: 0;
@@ -140,9 +153,14 @@ aside {
 .aside_img_secong {
    bottom: 15%;
 }
+<<<<<<< HEAD
 
 .aside_img_third {
    top: 50%;
+=======
+.aside_img_third {
+top: 50%;
+>>>>>>> 4e1328e (Add updated portfolio)
 }
 
 .nav_aside_style {
@@ -168,6 +186,7 @@ aside {
    margin-left: 1rem;
 }
 
+<<<<<<< HEAD
 /*main_content*/
 
 .main_content {
@@ -177,6 +196,17 @@ aside {
    right: 0;
    bottom: 0;
    background: linear-gradient(to right, #fff6fe 0%, #fff 50%, #f6efef 100%);
+=======
+/*main_content*/ 
+
+.main_content {
+width: 75%;
+position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #fff6fe 0%, #fff 50%, #f6efef 100%);
+>>>>>>> 4e1328e (Add updated portfolio)
 }
 
 .main_page {
@@ -204,10 +234,18 @@ aside {
    border-radius: 10px;
 }
 
+<<<<<<< HEAD
+=======
+.self_text {
+   text-align: justify;
+}
+
+>>>>>>> 4e1328e (Add updated portfolio)
 .main_img {
    display: block;
    position: absolute;
    top: 30%;
+<<<<<<< HEAD
 }
 
 /* about_me section */
@@ -299,4 +337,6 @@ aside {
    font-size: 23px;
    text-align: center;
    letter-spacing: 2px;
+=======
+>>>>>>> 4e1328e (Add updated portfolio)
 }
