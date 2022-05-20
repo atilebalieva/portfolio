@@ -1,0 +1,22 @@
+<script>
+   //Write a function comparing if two arrays are equals: 
+
+   const arr1 = [1, 2, 3, 4, 5];
+   const arr2 = [1, 2, 3, 4, 5];
+   let ok = null
+
+   function equals(arr1, arr2) {
+      if (arr1.length === arr2.length) {
+         for (let val of arr1) {
+            for (let val2 of arr1) {
+               if (arr1[val] === arr1[val2]) {
+                  ok = true
+               }
+            }
+         }
+         console.log(ok);
+      }
+      else console.log(false);
+   }
+   equals(arr1, arr2)
+</script>

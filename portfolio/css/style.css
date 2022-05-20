@@ -15,7 +15,7 @@ body {
    font-weight: normal;
    line-height: 1.3;
    color: black;
-   /* background-color: ; */
+   background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
 }
 
 .container {
@@ -75,8 +75,12 @@ aside {
    top: 0;
    left: 0;
    bottom: 0;
-   background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
    padding: 100px 70px;
+   background: blanchedalmond;
+   background: url(../images/tropical.png);
+   background-repeat: repeat-y;
+   background-size: 10%;
+   background-position: 100%;
 }
 
 .sidebar {
@@ -89,7 +93,6 @@ aside {
 }
 
 .aside_vertical {
-
    width: 2rem;
    height: 2rem;
    background-repeat: repeat-y;
