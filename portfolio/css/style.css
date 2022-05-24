@@ -1,12 +1,17 @@
+#home {
+   display: none;
+}
+
 *,
 *::after,
 *::before {
    box-sizing: border-box;
+
 }
 
 img {
    max-width: 100%;
-   /* height: auto; */
+   height: auto;
 }
 
 body {
@@ -15,12 +20,12 @@ body {
    font-weight: normal;
    line-height: 1.3;
    color: black;
-   background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
+   text-align: justify;
 }
 
 .container {
    margin: 0 auto;
-   padding: 0 15px;
+   padding: 0 40px;
 }
 
 /* navigation style   */
@@ -36,10 +41,28 @@ header {
    background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
 }
 
+main {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+}
+
 .logo {
    font-family: 'Oleo Script Swash Caps', cursive, Arial, Helvetica sans-serif;
    font-size: 3.5rem;
    display: block;
+   position: relative;
+}
+
+.dot {
+   display: block;
+   border-radius: 50%;
+   width: 10px;
+   height: 10px;
+   background-color: red;
+   position: absolute;
+   top: 75%;
+   right: -16%
 }
 
 .logo,
@@ -47,6 +70,11 @@ header {
 .social_info a,
 .decoration a {
    text-decoration: none;
+}
+
+.logo span,
+.decoration a {
+   color: #3e273e;
 }
 
 .nav_info,
@@ -70,17 +98,14 @@ header {
 /* aside style */
 
 aside {
-   width: 400px;
+   /*  display: none;*/
+   width: 25%;
    position: fixed;
    top: 0;
    left: 0;
    bottom: 0;
    padding: 100px 70px;
-   background: blanchedalmond;
-   background: url(../images/tropical.png);
-   background-repeat: repeat-y;
-   background-size: 10%;
-   background-position: 100%;
+   background: linear-gradient(to right, #dad3e4 0%, #fff 50%, #f1e1f5 100%);
 }
 
 .sidebar {
@@ -99,22 +124,25 @@ aside {
 }
 
 .aside_img,
-.aside_img_secong {
+.aside_img_secong,
+.aside_img_third {
    width: 3rem;
    height: 3rem;
-
+   position: absolute;
+   z-index: 1;
+   left: 23%;
 }
 
 .aside_img {
-   position: absolute;
    top: 15%;
-   left: 115%;
 }
 
 .aside_img_secong {
-   position: absolute;
-   bottom: 14%;
-   left: 115%;
+   bottom: 15%;
+}
+
+.aside_img_third {
+   top: 50%;
 }
 
 .nav_aside_style {
@@ -138,4 +166,137 @@ aside {
    width: 2rem;
    height: 2rem;
    margin-left: 1rem;
+}
+
+/*main_content*/
+
+.main_content {
+   width: 75%;
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   background: linear-gradient(to right, #fff6fe 0%, #fff 50%, #f6efef 100%);
+}
+
+.main_page {
+   display: flex;
+}
+
+.main_header {
+   width: 40%;
+   margin: 10rem 4rem;
+}
+
+.self_rep {
+   font-size: 5rem;
+   text-transform: uppercase;
+   font-family: 'Roboto', sans-serif;
+   line-height: 4.5rem;
+   margin: 2rem 0;
+}
+
+.self_rep_line {
+   display: block;
+   width: 100%;
+   height: 12px;
+   background-color: red;
+   border-radius: 10px;
+}
+
+.main_img {
+   display: block;
+   position: absolute;
+   top: 30%;
+}
+
+/* about_me section */
+
+.second_section h1 {
+   font-size: 7rem;
+   text-transform: uppercase;
+   color: #e9dee9;
+   position: absolute;
+   top: 0;
+   left: 20%;
+   z-index: -1;
+   margin: 0;
+}
+
+.second_section h2 {
+   font-size: 3rem;
+   text-align: center;
+   margin-bottom: 0;
+}
+
+.line {
+   display: block;
+   width: 20%;
+   height: 7px;
+   background-color: #e00000;
+   border-radius: 10px;
+   margin: auto;
+}
+
+.about_infomation {
+   display: flex;
+   width: 100%;
+   margin-top: 8rem;
+}
+
+.introduce {
+   width: 35%;
+   border-radius: 4px;
+   padding: 20px;
+
+}
+
+.introduce,
+.button_cv {
+   border: 1px solid #aba9c3;
+   box-shadow: 1px 1px 5px #aba9c3;
+
+}
+
+.introduce ul {
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 100%;
+   margin: 0;
+}
+
+.introduce li {
+   display: block;
+   list-style: none;
+   margin: 1rem 0;
+}
+
+.introduce span {
+   display: inline-block;
+}
+
+.about_text {
+   color: #76657a;
+   margin-top: 0;
+}
+
+.introduce_block {
+   width: 55%;
+   margin-left: 3rem;
+   line-height: 2rem;
+}
+
+.button_cv {
+   display: block;
+   background: #60648b;
+   width: 35%;
+   border-radius: 40px;
+   padding: 8px;
+   text-decoration: none;
+   color: white;
+   font-size: 23px;
+   text-align: center;
+   letter-spacing: 2px;
 }
