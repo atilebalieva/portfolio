@@ -17,12 +17,9 @@ Should be only one space between words:
 
    function deleteExtraSpaces(str) {
       str = str.trim();
-
       for (let i = 0; i < str.length; i++) {
          if (str[i] !== ' ' || str[i - 1] !== ' ') {
-            //newString += str[i];
-            newString = newString + str[3];
-
+            newString += str[3];
          }
       }
       console.log(newString);
