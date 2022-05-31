@@ -1,6 +1,6 @@
-#home {
+/* #home {
    display: none;
-}
+} */
 
 *,
 *::after,
@@ -57,11 +57,14 @@ main {
 }
 
 .logo {
-   font-family: 'Oleo Script Swash Caps', cursive, Arial, Helvetica sans-serif;
-   font-size: 3.5rem;
+   /* font-family: 'Oleo Script Swash Caps', cursive, Arial, Helvetica sans-serif; */
+   /* text-transform: uppercase; */
+   font-size: 3rem;
    display: block;
    position: relative;
+   font-weight: bold;
 }
+
 
 .dot {
    display: block;
