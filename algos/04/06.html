@@ -19,7 +19,7 @@ Should be only one space between words:
       str = str.trim();
       for (let i = 0; i < str.length; i++) {
          if (str[i] !== ' ' || str[i - 1] !== ' ') {
-            newString += str[3];
+            newString += str[i];
          }
       }
       console.log(newString);
