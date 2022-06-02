@@ -1,12 +1,7 @@
-/* #home {
-   display: none;
-} */
-
 *,
 *::after,
 *::before {
    box-sizing: border-box;
-
 }
 
 img {
@@ -23,12 +18,16 @@ body {
 <<<<<<< HEAD
 =======
    text-align: justify;
+<<<<<<< HEAD
 >>>>>>> 1cf523e (Update)
+=======
+   background: linear-gradient(to right, #fff6fe 0%, #fff 50%, #f6efef 100%);
+>>>>>>> 37e426c (Updated portfolio)
 }
 
 .container {
    margin: 0 auto;
-   padding: 0 40px;
+   padding: 0 3rem;
 }
 
 /* navigation style   */
@@ -44,16 +43,9 @@ header {
    background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
 }
 
-main {
-   display: flex;
-   justify-content: space-between;
-   width: 100%;
-}
 
 main {
-   display: flex;
-   justify-content: space-between;
-   width: 100%;
+   position: relative;
 }
 
 .logo {
@@ -64,7 +56,6 @@ main {
    position: relative;
    font-weight: bold;
 }
-
 
 .dot {
    display: block;
@@ -100,10 +91,6 @@ main {
    list-style: none;
 }
 
-/* .navigation {
-   flex-grow: 1;
-} */
-
 .nav_info {
    display: flex;
    justify-content: center;
@@ -116,6 +103,7 @@ main {
 /* aside style */
 
 aside {
+<<<<<<< HEAD
    /*  display: none;*/
 <<<<<<< HEAD
 =======
@@ -123,6 +111,8 @@ aside {
 >>>>>>> 4e1328e (Add updated portfolio)
 =======
 >>>>>>> 1cf523e (Update)
+=======
+>>>>>>> 37e426c (Updated portfolio)
    width: 25%;
    position: fixed;
    top: 0;
@@ -155,6 +145,7 @@ aside {
    position: absolute;
    z-index: 1;
    left: 23%;
+   position: fixed;
 }
 
 .aside_img {
@@ -201,12 +192,14 @@ top: 50%;
 
 /*main_content*/
 
+
 .main_content {
    width: 75%;
-   position: fixed;
+   /* position: absolute;
    top: 0;
    right: 0;
    bottom: 0;
+<<<<<<< HEAD
    background: linear-gradient(to right, #fff6fe 0%, #fff 50%, #f6efef 100%);
 <<<<<<< HEAD
 =======
@@ -222,6 +215,9 @@ position: fixed;
 >>>>>>> 4e1328e (Add updated portfolio)
 =======
 >>>>>>> 1cf523e (Update)
+=======
+   left: 25%; */
+>>>>>>> 37e426c (Updated portfolio)
 }
 
 .main_page {
@@ -265,20 +261,22 @@ position: fixed;
    top: 30%;
 }
 
-/* about_me section */
+.header_style {
+   position: relative;
+}
 
-.second_section h1 {
-   font-size: 7rem;
+.header_style h3 {
+   font-size: 6rem;
+   top: 0;
    text-transform: uppercase;
    color: #e9dee9;
    position: absolute;
-   top: 0;
-   left: 20%;
    z-index: -1;
+   left: 19%;
    margin: 0;
 }
 
-.second_section h2 {
+.header_style h2 {
    font-size: 3rem;
    text-align: center;
    margin-bottom: 0;
@@ -303,14 +301,16 @@ position: fixed;
    width: 35%;
    border-radius: 4px;
    padding: 20px;
-
 }
 
-.introduce,
+.block_style,
 .button_cv {
    border: 1px solid #aba9c3;
    box-shadow: 1px 1px 5px #aba9c3;
+}
 
+.block_style {
+   border-radius: 4px;
 }
 
 .introduce ul {
@@ -355,9 +355,42 @@ position: fixed;
    text-align: center;
    letter-spacing: 2px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4e1328e (Add updated portfolio)
 }
 =======
 }
 >>>>>>> 1cf523e (Update)
+=======
+}
+
+/* section_services */
+
+.services_info {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-top: 2rem;
+   color: #7b5c7b;
+}
+
+.services_info_style h3 {
+   color: black;
+}
+
+.services_info_style {
+   flex-basis: 40%;
+   padding: 2rem;
+   margin: 1rem;
+}
+
+.services_num {
+   background-color: #3e273e;
+   padding: 10px 15px;
+   color: white;
+   border-radius: 5px;
+   margin-right: 10px;
+
+}
+>>>>>>> 37e426c (Updated portfolio)
