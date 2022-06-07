@@ -43,9 +43,9 @@ header {
    background: linear-gradient(to bottom, #efeff6 0%, #fff 50%, #f6efef 100%);
 }
 
-
 main {
-   position: relative;
+   display: flex;
+   width: 100%;
 }
 
 .logo {
@@ -114,11 +114,6 @@ aside {
 =======
 >>>>>>> 37e426c (Updated portfolio)
    width: 25%;
-   position: fixed;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   padding: 100px 70px;
    background: linear-gradient(to right, #dad3e4 0%, #fff 50%, #f1e1f5 100%);
 }
 
@@ -128,7 +123,10 @@ aside {
    justify-content: space-evenly;
    align-items: center;
    height: 100%;
-   position: relative;
+   position: fixed;
+   top: 0;
+   left: 8%;
+   bottom: 0;
 }
 
 .aside_vertical {
@@ -195,6 +193,7 @@ top: 50%;
 
 .main_content {
    width: 75%;
+<<<<<<< HEAD
    /* position: absolute;
    top: 0;
    right: 0;
@@ -218,11 +217,19 @@ position: fixed;
 =======
    left: 25%; */
 >>>>>>> 37e426c (Updated portfolio)
+=======
+>>>>>>> 21a9cc2 (Updated)
 }
 
-.main_page {
-   display: flex;
+/* #home {
+   height: 100%;
 }
+
+
+.main_page {
+   height: 100%;
+}
+ */
 
 .main_header {
    width: 40%;
@@ -247,6 +254,7 @@ position: fixed;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .self_text {
    text-align: justify;
@@ -256,9 +264,14 @@ position: fixed;
 =======
 >>>>>>> 1cf523e (Update)
 .main_img {
+=======
+.main_image img {
+   z-index: -1;
+>>>>>>> 21a9cc2 (Updated)
    display: block;
    position: absolute;
    top: 30%;
+
 }
 
 .header_style {
@@ -367,13 +380,15 @@ position: fixed;
 
 /* section_services */
 
-.services_info {
+.services_info,
+.summary_block {
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
    margin-top: 2rem;
    color: #7b5c7b;
 }
+
 
 .services_info_style h3 {
    color: black;
@@ -385,12 +400,48 @@ position: fixed;
    margin: 1rem;
 }
 
-.services_num {
+
+.services_num,
+.year {
    background-color: #3e273e;
-   padding: 10px 15px;
    color: white;
    border-radius: 5px;
-   margin-right: 10px;
+}
 
+<<<<<<< HEAD
 }
 >>>>>>> 37e426c (Updated portfolio)
+=======
+.services_num {
+   padding: 10px 15px;
+   margin-right: 10px;
+}
+
+.summary_block {
+   margin-top: 4rem;
+   color: #3c2e3c
+}
+
+.summary_info {
+   flex-basis: 45%;
+   padding: 1rem;
+   margin-left: 1rem;
+   margin-bottom: 1rem;
+   background: #efedf8
+}
+
+.summary_header {
+   flex-basis: 45%;
+}
+
+.summary_header_style {
+   font-size: 1.5rem;
+   margin: 0 0 1rem 1rem;
+   padding: 0;
+}
+
+.year {
+   font-size: 15px;
+   padding: 4px 9px;
+}
+>>>>>>> 21a9cc2 (Updated)
