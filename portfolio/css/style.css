@@ -224,7 +224,10 @@ position: fixed;
 #home,
 #about,
 #services,
-#resume {
+#resume,
+#portfolio,
+#client,
+#contact {
    min-height: 100vh;
 }
 
@@ -314,7 +317,8 @@ position: fixed;
 }
 
 .block_style,
-.button_cv {
+.button_cv,
+.git_button {
    border: 1px solid #aba9c3;
    box-shadow: 1px 1px 5px #aba9c3;
 }
@@ -422,7 +426,7 @@ position: fixed;
    padding: 1rem;
    margin-left: 1rem;
    margin-bottom: 1rem;
-   background: #efedf8
+   background: #fbfafc
 }
 
 .summary_header {
@@ -464,4 +468,56 @@ position: fixed;
    list-style: none;
 
 }
+<<<<<<< HEAD
 >>>>>>> 57ede0f (Updated)
+=======
+
+
+/* client speak */
+
+.cs-1,
+.cs-2 {
+   display: flex;
+   position: relative;
+}
+
+
+.name {
+   position: absolute;
+   top: 15%;
+   left: 20%;
+}
+
+.icon-cs {
+   width: 3rem;
+   height: 3rem;
+}
+
+.git {
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+   gap: 20px;
+   min-height: 400px;
+}
+
+.git-pi span {
+   text-transform: uppercase;
+}
+
+.git-form,
+.git-pi {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.git-style {
+   padding: 10px;
+}
+
+.git_button {
+   background: #60648b;
+   color: white;
+   border-radius: 4px;
+}
+>>>>>>> 686ea53 (Updated)
