@@ -35,6 +35,15 @@ body {
    align-self: flex-start;
 }
 
+.btn_name:hover {
+   background-color: #62be74;
+}
+
+.btn_change {
+   display: none;
+
+}
+
 .symbol {
    width: 0;
    height: 0;
@@ -59,5 +68,10 @@ body {
 }
 
 .lists li {
+   list-style: none;
+}
+
+.lists li:hover {
+   background-color: #dadaeb;
    list-style: none;
 }
