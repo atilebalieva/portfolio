@@ -1,17 +1,18 @@
-const name = document.querySelector('#name')
+const userName = document.querySelector('#name')
 const button = document.querySelector('#button');
 const gameField = document.querySelector('.field');
 
 
 button.addEventListener('click', () => {
+   let correctAnswer = 0;
    const gameBlock = document.createElement('div');
    gameBlock.classList.add('game_block');
    let dropDown = document.createElement('button');
    dropDown.classList.add('btn_name');
-   dropDown.innerHTML = name.value;
+   dropDown.innerHTML = userName.value;
    let score = document.createElement('span')
    score.classList.add('score');
-   score.innerHTML = ' (0)'
+   score.innerText = `  (${correctAnswer})`;
    dropDown.append(score);
    let symbol = document.createElement('span')
    symbol.classList.add('symbol')
@@ -20,11 +21,12 @@ button.addEventListener('click', () => {
    gameField.append(gameBlock);
 
    dropDown.addEventListener('click', () => {
-      // if (dropDown have ulist) {
-      //    ulist.remove();
-      // }
+      //если при нажатии кнопки юзера в блоке gameblock уже есть блок с классом  ulist то удали его
+      // а если нет блока с классом ulist добавь его
+
       let ulist = document.createElement('ul')
       ulist.classList.add('lists')
+      gameBlock.append(ulist);
       let play = document.createElement('li');
       play.innerText = 'Play';
       ulist.append(play);
@@ -34,22 +36,44 @@ button.addEventListener('click', () => {
       const remove = document.createElement('li');
       remove.innerText = 'Delete';
       ulist.append(remove);
-      gameBlock.append(ulist);
+      gameField.append(gameBlock);
+
+      // if (!gameBlock.contains(ulist)) {
+      //    console.log(false)
+      // } else if (gameBlock.contains(ulist)) {
+      //    ulist.remove();
+      //    console.log(true)
+      // }
 
       play.addEventListener('click', () => {
+         let exspression;
+         let gameSession;
 
+         for (let i = 0; i < 5; i++) {
+            let firstNum = Math.floor((Math.random() * 10) + 1);
+            let secondNum = Math.floor((Math.random() * 10) + 1);
+            let opersArr = ['+', '-'];
+            let randomOper = Math.floor(Math.random() * opersArr.length);
+            exspression = firstNum + ' ' + opersArr[randomOper] + ' ' + secondNum;
+            gameSession = parseInt(prompt('Answer in two seconds:' + '\n' + exspression + ' = ?'));
+            if (gameSession === null) {
+               console.log('break')
+               break;
+            } else if (gameSession === eval(exspression)) {
+               correctAnswer += 1
+               score.innerHTML = `  (${correctAnswer})`;
+            }
+         }
       });
 
       reset.addEventListener('click', () => {
-         score.innerHTML = ' (1)';
+         score.innerHTML = ` (0)`;
       })
 
       remove.addEventListener('click', () => {
          gameBlock.remove();
       })
-
    })
-
 });
 
 
