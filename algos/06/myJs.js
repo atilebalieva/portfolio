@@ -1,77 +1,110 @@
-const userName = document.querySelector('#name')
+const userName = document.querySelector('#name');
 const gameField = document.querySelector('.field');
-
 function myFunction() {
+   const name = userName.value;
 
-   //create button element
-   let correctAnswer = 0;
    const gameBlock = document.createElement('div');
    gameBlock.classList.add('game_block');
-   let button = document.createElement('button');
+
+   const button = document.createElement('button');
    button.classList.add('btn-hide');
-   button.textContent = userName.value;
-   button.setAttribute('id', userName.value)
+   button.textContent = name;
+
    let score = document.createElement('span')
    score.classList.add('score');
-   score.innerText = `  (${correctAnswer})`;
+   score.setAttribute('id', 'score-' + name);
+   score.innerHTML = `(0)`;
    button.append(score);
-   let symbol = document.createElement('span')
+
+   const symbol = document.createElement('span')
    symbol.classList.add('symbol')
    button.append(symbol);
+
    gameBlock.append(button);
    gameField.append(gameBlock);
-   let dropDown = document.getElementById(userName.value)
-   console.log(dropDown);
 
-   // create ul element
-   let ulist = document.createElement('ul')
-   ulist.setAttribute('id', 'lists');
+   const ulist = document.createElement('ul')
+   ulist.setAttribute('id', 'list-' + name);
+   ulist.classList.add('list')
    gameBlock.append(ulist);
-   let play = document.createElement('li');
+
+   const play = document.createElement('li');
    play.innerText = 'Play';
    ulist.append(play);
-   let reset = document.createElement('li');
+
+   const reset = document.createElement('li');
    reset.innerText = 'Reset';
    ulist.append(reset);
+
    const remove = document.createElement('li');
    remove.innerText = 'Delete';
    ulist.append(remove);
 
    button.addEventListener('click', () => {
-      let list = document.getElementById('lists');
+      const list = document.getElementById('list-' + name);
       list.classList.toggle('show');
+   });
 
+   play.addEventListener('click', () => {
+      doPlay(name);
+   });
 
-      play.addEventListener('click', () => {
-         let exspression;
-         let answerUser;
-         for (let i = 0; i < 5; i++) {
-            let firstNum = Math.floor((Math.random() * 10) + 1);
-            let secondNum = Math.floor((Math.random() * 10) + 1);
-            let opersArr = ['+', '-'];
-            let randomOper = Math.floor(Math.random() * opersArr.length);
-            exspression = firstNum + ' ' + opersArr[randomOper] + ' ' + secondNum;
-            answerUser = prompt('Answer in two seconds:' + '\n' + exspression + ' = ?');
-            if (answerUser === null) {
-               console.log('break');
-               break;
-            } else if (parseInt(answerUser) === eval(exspression)) {
-               correctAnswer += 1
-               score.innerHTML = `  (${correctAnswer})`;
-            }
-         }
-      });
-
-      reset.addEventListener('click', () => {
-         score.innerHTML = ` (0)`;
-      })
-
-      remove.addEventListener('click', () => {
-         gameBlock.remove();
-      })
-
-
+   reset.addEventListener('click', () => {
+      score.innerHTML = ` (0)`;
    })
 
+   remove.addEventListener('click', () => {
+      gameBlock.remove();
+   });
 
 }
+
+function doPlay(name) {
+   let exspression;
+   let answerUser;
+   let correctAnswers = 0;
+
+   for (let i = 0; i < 5; i++) {
+      let firstNum = Math.floor((Math.random() * 10) + 1);
+      let secondNum = Math.floor((Math.random() * 10) + 1);
+      let opersArr = ['+', '-'];
+      let randomOper = Math.floor(Math.random() * opersArr.length);
+
+      exspression = firstNum + ' ' + opersArr[randomOper] + ' ' + secondNum;
+
+      let date1 = new Date();
+      answerUser = prompt('Answer in two seconds:' + '\n' + exspression + ' = ?');
+      let date2 = new Date();
+
+      let seconds = (date2 - date1) / 1000;
+
+      if (answerUser === null) {
+         break;
+      }
+
+      if (parseInt(answerUser) === eval(exspression) && seconds <= 5) {
+         correctAnswers++;
+      }
+   }
+
+   let scoreSpan = document.getElementById('score-' + name);
+
+   let oldScore = scoreSpan.innerHTML;
+   let n = oldScore.substring(1, oldScore.length - 1);
+
+   let newScore = parseInt(n) + correctAnswers;
+   scoreSpan.innerHTML = `(${newScore})`;
+
+   store(name,newScore);
+
+}
+let localInfo = {};
+function store(name,score) {
+
+   localInfo.nameUser = name;
+   localInfo.scores = score;
+   // window.localStorage.setItem(name, JSON.stringify(localInfo));
+}
+
+console.log(localInfo);
+
