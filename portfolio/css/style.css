@@ -2,6 +2,10 @@
 *::after,
 *::before {
    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   text-decoration: none;
 }
 
 img {
@@ -14,9 +18,12 @@ body {
    font-size: 18px;
    font-weight: normal;
    line-height: 1.3;
+<<<<<<< HEAD
    color: black;
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> afc00a9 (Updated)
    text-align: justify;
 <<<<<<< HEAD
 >>>>>>> 1cf523e (Update)
@@ -46,11 +53,12 @@ header {
 main {
    display: flex;
    width: 100%;
+   position: relative;
 }
 
 .logo {
-   /* font-family: 'Oleo Script Swash Caps', cursive, Arial, Helvetica sans-serif; */
-   /* text-transform: uppercase; */
+   font-family: 'Oleo Script', cursive, Arial, Helvetica sans-serif;
+   text-transform: uppercase;
    font-size: 3rem;
    display: block;
    position: relative;
@@ -104,6 +112,7 @@ main {
 
 aside {
 <<<<<<< HEAD
+<<<<<<< HEAD
    /*  display: none;*/
 <<<<<<< HEAD
 =======
@@ -115,6 +124,50 @@ aside {
 >>>>>>> 37e426c (Updated portfolio)
    width: 25%;
    background: linear-gradient(to right, #dad3e4 0%, #fff 50%, #f1e1f5 100%);
+=======
+   width: 30%;
+   position: relative;
+   background: linear-gradient(to right, #dad3e4 0%, rgb(238, 233, 233) 50%, #f1e1f5 100%);
+   /* background: linear-gradient(to right, #e9e1eb 0%, rgb(247, 245, 250) 50%, #ece4ef 100%); */
+
+   display: flex;
+
+}
+
+#close-btn {
+   width: 4rem;
+   height: 2rem;
+   outline: none;
+   border: 1px solid whitesmoke;
+   background-color: white;
+   border-radius: 12px;
+   position: fixed;
+   top: 4%;
+   left: 26%;
+   bottom: 0;
+   font-size: 1rem;
+   box-shadow: 0px 0px 3px rgb(157, 142, 142) ;
+}
+
+.icons {
+   position: fixed;
+   top: 0;
+   left: 27.3%;
+   bottom: 0;
+}
+.icons ul li {
+   margin: 0;
+   padding: 0;
+   padding-top: 100px;
+}
+
+.icons ul li span {
+    width: 20px;
+    height: 6px;
+    background-color: #fff6fe ;
+    display: inline-block;
+    transform: rotate(20deg);
+>>>>>>> afc00a9 (Updated)
 }
 
 .sidebar {
@@ -135,6 +188,7 @@ aside {
    background-repeat: repeat-y;
 }
 
+<<<<<<< HEAD
 .aside_img,
 .aside_img_secong,
 .aside_img_third {
@@ -165,6 +219,8 @@ top: 50%;
 >>>>>>> 1cf523e (Update)
 }
 
+=======
+>>>>>>> afc00a9 (Updated)
 .nav_aside_style {
    padding: 0;
    font-size: 1.5rem;
@@ -179,7 +235,7 @@ top: 50%;
 
 .decoration a:hover {
    color: rgb(71 158 37);
-   font-weight: bold;
+   /* font-weight: bold; */
 }
 
 .decoration img {
@@ -228,11 +284,21 @@ position: fixed;
 #portfolio,
 #client,
 #contact {
-   min-height: 100vh;
+   height: 100vh;
+   border: 1px solid black;
+}
+
+.main_page,
+.second_section {
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   flex-direction: column;
+   height: 100%;
 }
 
 .main_header {
-   width: 40%;
+   width: 50%;
    margin: 10rem 4rem;
 }
 
@@ -244,14 +310,14 @@ position: fixed;
    margin: 2rem 0;
 }
 
-.self_rep_line {
+.self_rep_line,
+.line {
    display: block;
-   width: 100%;
-   height: 12px;
-   background-color: red;
+   background-color: #e00000;
    border-radius: 10px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -266,17 +332,39 @@ position: fixed;
 .main_img {
 =======
 .main_image img {
+=======
+.self_rep_line {
+   width: 70%;
+   height: 3%;
+}
+
+.self_text {
+   margin-top: 2rem;
+   color: #766f77;
+   line-height: 2rem;
+   font-size: 1.3rem;
+}
+
+.self_text,
+.about_text {
+   color: #766f77;
+}
+
+
+/* .main_image img {
+>>>>>>> afc00a9 (Updated)
    z-index: -1;
 >>>>>>> 21a9cc2 (Updated)
    display: block;
    position: absolute;
    top: 30%;
 
-}
+} */
 
 .header_style {
-   margin-bottom: 3rem;
+   margin-bottom: 6rem;
    position: relative;
+   align-self: center;
 }
 
 .header_style h3 {
@@ -292,17 +380,15 @@ position: fixed;
 
 .header_style h2 {
    font-size: 3rem;
-   text-align: center;
    margin: 0;
+   text-transform: uppercase;
+   
 }
 
 .line {
-   display: block;
-   width: 20%;
+   width: 70%;
    height: 7px;
-   background-color: #e00000;
-   border-radius: 10px;
-   margin: auto;
+   margin: 1rem auto auto auto;
 }
 
 .about_infomation {
@@ -313,14 +399,20 @@ position: fixed;
 .introduce {
    width: 35%;
    border-radius: 4px;
-   padding: 20px;
+   padding: 1rem;
+   /* transition: all 1s ease-in; */
 }
+
+/* .introduce:hover {
+   transform: scaleY(1.5)  scaleX(1);
+
+} */
 
 .block_style,
 .button_cv,
 .git_button {
-   border: 1px solid #aba9c3;
-   box-shadow: 1px 1px 5px #aba9c3;
+   border: 1px solid #d1d0da;
+   box-shadow: 1px 1px 38px #c1beb7;
 }
 
 .block_style {
@@ -346,8 +438,11 @@ position: fixed;
    display: inline-block;
 }
 
+.introduce_block {
+   align-self: center;
+}
+
 .about_text {
-   color: #76657a;
    margin-top: 0;
 }
 
@@ -359,13 +454,14 @@ position: fixed;
 
 .button_cv {
    display: block;
-   background: #60648b;
-   width: 35%;
+   margin-top: 2rem;
+   background: #665270;
+   width: 30%;
+   height: 15%;
+   padding: 7px;
    border-radius: 40px;
-   padding: 8px;
-   text-decoration: none;
    color: white;
-   font-size: 23px;
+   font-size: 21px;
    text-align: center;
    letter-spacing: 2px;
 <<<<<<< HEAD

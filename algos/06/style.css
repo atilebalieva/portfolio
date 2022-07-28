@@ -50,7 +50,7 @@ body {
    right: 11%;
 }
 
-#lists {
+.list {
    border: 1px solid rgb(43, 43, 170);
    margin-top: 10px;
    width: 100px;
@@ -63,10 +63,10 @@ body {
    display: none;
 }
 
-#lists li:hover {
+.list li:hover {
    background-color: #dadaeb;
 }
 
-#lists.show {
+.list.show {
    display: block;
 }
