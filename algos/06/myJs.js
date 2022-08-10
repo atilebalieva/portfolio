@@ -1,19 +1,51 @@
-const userName = document.querySelector('#name');
+let userName = document.querySelector('#name');
 const gameField = document.querySelector('.field');
-function myFunction() {
-   const name = userName.value;
+
+const users = {};//1 we made an empty object;
+let correctAnswers = 0;
+
+function getItem() {
+   const loadedUsers = localStorage.getItem('users');//4 we are taking our string object and named  loadedUsers
+
+   if(loadedUsers !== null) {//5  made a statment if in local storage we have some object information:
+      
+      const oldUsers = JSON.parse(loadedUsers);//  6 convert it from string to  the object:
+   
+      for (let u in oldUsers) {//7 and iterate this object and take the object key name (in our situation this is userName.value)
+         
+         myFunction(u);// and pass as an argument into the myFunction(u)
+      }
+   
+      // `${oldUsers[u]}`
+   } else {
+      console.log('no old Users')
+   }
+}
+
+getItem();
+ 
+function onButtonClick () {
+   const userFromInput = userName.value;
+   myFunction(userFromInput);
+
+}
+
+function myFunction(user) {
+
+   users[userName] = correctAnswers;
+   localStorage.setItem("users", JSON.stringify(users)) ;//3 we add out object with key and value to the LocalStorage, before we make a string instead of the object data;
 
    const gameBlock = document.createElement('div');
    gameBlock.classList.add('game_block');
 
    const button = document.createElement('button');
    button.classList.add('btn-hide');
-   button.textContent = name;
+   button.innerText = user;
 
    let score = document.createElement('span')
    score.classList.add('score');
-   score.setAttribute('id', 'score-' + name);
-   score.innerHTML = `(0)`;
+   score.setAttribute('id', 'score-' + user);
+   score.innerText = ` (0)`;
    button.append(score);
 
    const symbol = document.createElement('span')
@@ -24,7 +56,7 @@ function myFunction() {
    gameField.append(gameBlock);
 
    const ulist = document.createElement('ul')
-   ulist.setAttribute('id', 'list-' + name);
+   ulist.setAttribute('id', 'list-' + user);
    ulist.classList.add('list')
    gameBlock.append(ulist);
 
@@ -41,16 +73,16 @@ function myFunction() {
    ulist.append(remove);
 
    button.addEventListener('click', () => {
-      const list = document.getElementById('list-' + name);
+      const list = document.getElementById('list-' + user);
       list.classList.toggle('show');
    });
 
    play.addEventListener('click', () => {
-      doPlay(name);
+      doPlay(user);
    });
 
    reset.addEventListener('click', () => {
-      score.innerHTML = ` (0)`;
+      score.innerText = ` (0)`;
    })
 
    remove.addEventListener('click', () => {
@@ -62,7 +94,6 @@ function myFunction() {
 function doPlay(name) {
    let exspression;
    let answerUser;
-   let correctAnswers = 0;
 
    for (let i = 0; i < 5; i++) {
       let firstNum = Math.floor((Math.random() * 10) + 1);
@@ -89,22 +120,11 @@ function doPlay(name) {
 
    let scoreSpan = document.getElementById('score-' + name);
 
-   let oldScore = scoreSpan.innerHTML;
-   let n = oldScore.substring(1, oldScore.length - 1);
-
-   let newScore = parseInt(n) + correctAnswers;
-   scoreSpan.innerHTML = `(${newScore})`;
-
-   store(name,newScore);
+   let oldScore = scoreSpan.innerText;
+   let n = oldScore.substring(2, oldScore.length - 1);
+   newScore = parseInt(n) + correctAnswers;
+   scoreSpan.innerText = `(${newScore})`;
 
 }
-let localInfo = {};
-function store(name,score) {
 
-   localInfo.nameUser = name;
-   localInfo.scores = score;
-   // window.localStorage.setItem(name, JSON.stringify(localInfo));
-}
-
-console.log(localInfo);
 
