@@ -76,13 +76,6 @@ main {
    right: -16%
 }
 
-.logo,
-.nav_info a,
-.social_info a,
-.decoration a {
-   text-decoration: none;
-}
-
 .logo span,
 .decoration a {
 <<<<<<< HEAD
@@ -92,11 +85,6 @@ main {
 =======
 >>>>>>> 1cf523e (Update)
    color: #3e273e;
-}
-
-.nav_info,
-.decoration {
-   list-style: none;
 }
 
 .nav_info {
@@ -113,6 +101,7 @@ main {
 aside {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    /*  display: none;*/
 <<<<<<< HEAD
 =======
@@ -126,12 +115,12 @@ aside {
    background: linear-gradient(to right, #dad3e4 0%, #fff 50%, #f1e1f5 100%);
 =======
    width: 30%;
+=======
+   width: 25%;
+>>>>>>> 63f5e02 (Updated)
    position: relative;
    background: linear-gradient(to right, #dad3e4 0%, rgb(238, 233, 233) 50%, #f1e1f5 100%);
-   /* background: linear-gradient(to right, #e9e1eb 0%, rgb(247, 245, 250) 50%, #ece4ef 100%); */
-
    display: flex;
-
 }
 
 #close-btn {
@@ -143,7 +132,7 @@ aside {
    border-radius: 12px;
    position: fixed;
    top: 4%;
-   left: 26%;
+   left: 23%;
    bottom: 0;
    font-size: 1rem;
    box-shadow: 0px 0px 3px rgb(157, 142, 142) ;
@@ -152,7 +141,7 @@ aside {
 .icons {
    position: fixed;
    top: 0;
-   left: 27.3%;
+   left: 24%;
    bottom: 0;
 }
 .icons ul li {
@@ -178,7 +167,7 @@ aside {
    height: 100%;
    position: fixed;
    top: 0;
-   left: 8%;
+   left: 7%;
    bottom: 0;
 }
 
@@ -235,7 +224,6 @@ top: 50%;
 
 .decoration a:hover {
    color: rgb(71 158 37);
-   /* font-weight: bold; */
 }
 
 .decoration img {
@@ -285,11 +273,10 @@ position: fixed;
 #client,
 #contact {
    height: 100vh;
-   border: 1px solid black;
+   /* border: 1px solid black; */
 }
 
-.main_page,
-.second_section {
+.main_page{
    display: flex;
    align-items: flex-start;
    justify-content: center;
@@ -340,17 +327,21 @@ position: fixed;
 
 .self_text {
    margin-top: 2rem;
-   color: #766f77;
    line-height: 2rem;
    font-size: 1.3rem;
 }
 
 .self_text,
-.about_text {
+.about_text,
+.services_info_style p,
+.resume-add-text,
+.p_nav a,
+.git-pi span{
    color: #766f77;
 }
 
 
+<<<<<<< HEAD
 /* .main_image img {
 >>>>>>> afc00a9 (Updated)
    z-index: -1;
@@ -361,8 +352,10 @@ position: fixed;
 
 } */
 
+=======
+>>>>>>> a863d30 (Make some changes)
 .header_style {
-   margin-bottom: 6rem;
+   margin-bottom: 4rem;
    position: relative;
    align-self: center;
 }
@@ -430,7 +423,6 @@ position: fixed;
 
 .introduce li {
    display: block;
-   list-style: none;
    margin: 1rem 0;
 }
 
@@ -455,13 +447,12 @@ position: fixed;
 .button_cv {
    display: block;
    margin-top: 2rem;
-   background: #665270;
    width: 30%;
    height: 15%;
    padding: 7px;
    border-radius: 40px;
-   color: white;
-   font-size: 21px;
+   font-size: 19px;
+   font-weight: bold;
    text-align: center;
    letter-spacing: 2px;
 <<<<<<< HEAD
@@ -473,6 +464,12 @@ position: fixed;
 }
 >>>>>>> 1cf523e (Update)
 =======
+}
+
+.git_button,
+.button_cv  {
+   color: #e00000;
+   background: linear-gradient(to right, #947eb3 0%, rgb(237 221 233) 50%, #826a88 100%);
 }
 
 /* section_services */
@@ -494,6 +491,10 @@ position: fixed;
    flex-basis: 40%;
    padding: 2rem;
    margin: 1rem;
+}
+
+.services_info_style p {
+   margin-top: 1rem;
 }
 
 
@@ -543,68 +544,158 @@ position: fixed;
 >>>>>>> 21a9cc2 (Updated)
 =======
 
+.works-nav {
+   align-self: center;
+   margin-bottom: 3rem;
+}
+
 .p_nav {
    display: flex;
+   gap:10px;
    align-items: center;
    justify-content: center;
 }
 
 .p_nav a {
-   margin-right: 3rem;
-   text-decoration: none;
-   font-weight: bold;
+   margin-right: 1rem;
+   font-size: 14px;
 }
 
 .p_nav a:hover {
-   border-bottom: 3px solid rgb(80, 62, 80);
+   border-bottom: 2px solid rgb(80, 62, 80);
 
 }
 
 .p_nav li {
-   list-style: none;
-
+   border-right: 1px solid grey;
 }
 <<<<<<< HEAD
 >>>>>>> 57ede0f (Updated)
 =======
 
+.p_nav li:last-child {
+   border: none;
+}
 
-/* client speak */
+/*resume */
+.resume_list  {
+   width: 100%;
+}
 
-.cs-1,
-.cs-2 {
+.resume_list li {
+   font-size: 15px;
+   margin: 0;
+   border-bottom: 1px solid #e5e5e5;
+   padding: 15px 0 20px;
+   cursor: pointer;
+   width: 100%;
+   transition: all .5s ease;
+}
+
+.resume-info span{
+   width: 32.3333%;
+   display: inline-block;
+}
+
+.resume-middle-text {
+   text-align: center;
+   font-weight: bold;
+}
+
+.right-text {
+   text-align: right;
+}
+
+.works-present {
+   width: 100%;
    display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 10px;
+}
+
+.works-present a {
+   width: 31.33%;
+   height: 45%;
+   display: block;
    position: relative;
+
 }
 
+.works-present img,
+.project-name {
+   border-radius: 8px;
+}
 
-.name {
+.works-present img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center;
+   display: block;
+}
+
+.project-name {
+   background-color: rgba(0, 0, 0, .7);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   color: white;
+   text-align: center;
+   font-family:'Courier New', Courier, monospace;
    position: absolute;
-   top: 15%;
-   left: 20%;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   transform: scaleY(0);
+   transform-origin: top;
+   transition: all 0.5s ease;
 }
 
-.icon-cs {
-   width: 3rem;
-   height: 3rem;
-}
+
+.works-present a:hover > .project-name{
+   transform: scale(1);
+
+} 
+
+.works-present a:hover > img{
+filter: blur(5px);
+-webkit-filter: blur(5px)
+
+} 
+
+
+/* get in touch */
 
 .git {
    display: grid;
    grid-template-columns: 1fr 2fr;
-   gap: 20px;
+   gap: 4rem;
    min-height: 400px;
+   align-self:center;
+   font-size: 15px;
 }
 
-.git-pi span {
-   text-transform: uppercase;
-}
 
 .git-form,
 .git-pi {
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
+   justify-content: space-evenly;
+}
+
+.git-pi span {
+   text-transform: uppercase;
+}
+.git-pi span:last-child {
+  text-transform: none;
+  text-decoration:underline;
+}
+
+.git-pi p {
+   font-weight: bold;
+   font-size: 16px;
 }
 
 .git-style {
@@ -612,8 +703,6 @@ position: fixed;
 }
 
 .git_button {
-   background: #60648b;
-   color: white;
    border-radius: 4px;
 }
 >>>>>>> 686ea53 (Updated)
