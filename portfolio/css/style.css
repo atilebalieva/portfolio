@@ -95,7 +95,7 @@ main {
 /* aside style */
 
 aside {
-   width: 30%;
+   width: 25%;
    position: relative;
    background: linear-gradient(to right, #dad3e4 0%, rgb(238, 233, 233) 50%, #f1e1f5 100%);
    /* background: linear-gradient(to right, #e9e1eb 0%, rgb(247, 245, 250) 50%, #ece4ef 100%); */
@@ -122,7 +122,7 @@ aside {
 .icons {
    position: fixed;
    top: 0;
-   left: 27.3%;
+   left: 24%;
    bottom: 0;
 }
 .icons ul li {
