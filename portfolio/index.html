@@ -11,12 +11,11 @@
    <link rel="stylesheet" href="css/media.css">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400&family=Oleo+Script:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="myJS.js">
 </head>
 
 <body>
    <header>
-      <div class="container header_info">
+      <div class="container header_part">
          <a href="" class="logo">
             <span>Aisal</span>
             <span class="dot"></span>
@@ -55,8 +54,8 @@
       </div>
    </header>
    <main>
-      <aside>
-            <button type="button" id="close-btn">Close</button>
+       <button type="button" id="close-btn" class="close-btn">Close</button>
+      <aside id="aside-part">
          <div class="sidebar">
             <a href="" class="logo">
                <span>Aisal</span>
@@ -122,11 +121,11 @@
             </ul>
          </div>
       </aside>
-      <div class="main_content container">
+      <div class="main_content container" id="main-content">
          <section id="home">
             <div class="main_page">
                <div class="main_header">
-                  <h2 class="self_rep">Web developer</h2>
+                  <h2 class="header-info self_rep">Web developer</h2>
                   <span class="self_rep_line"></span>
                   <p class="self_text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis necessitatibus
                      a repudiandae deserunt veritatis quos. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -140,7 +139,7 @@
          <section id="about">
             <div class="main_page">
                <div class="header_style">
-                  <h2>About me</h2>
+                  <h2 class="header-info">About me</h2>
                   <span class="line"></span>
                </div>
                <div class="about_infomation">
@@ -183,7 +182,7 @@
          <section id="services">
             <div class="main_page">
                <div class="header_style">
-                  <h2>Quality services</h2>
+                  <h2 class="header-info">Quality services</h2>
                   <span class="line"></span>
                </div>
                <div class="services_info">
@@ -231,7 +230,7 @@
          <section id="resume">
             <div class="main_page">
             <div class="header_style">
-               <h2>My Resume</h2>
+               <h2 class="header-info">My Resume</h2>
                <span class="line"></span>
             </div>
             <div class="resume_list">
@@ -269,7 +268,7 @@ I will change atext of the position later
          <section id="portfolio">
             <div class="main_page">
                <div class="header_style">
-                  <h2>Featured works</h2>
+                  <h2 class="header-info">Featured works</h2>
                   <span class="line"></span>
                </div>
                <nav class="works-nav">
@@ -341,7 +340,7 @@ I will change atext of the position later
          <section id="contact">
             <div class="main_page">
             <div class="header_style">
-               <h2>Get in touch</h2>
+               <h2 class="header-info">Get in touch</h2>
                <span class="line"></span>
             </div>
             <div class="git">
@@ -365,6 +364,7 @@ I will change atext of the position later
          </section>
       </div>
    </main>
+   <script src="JS_part/JS_part.js"></script>
 </body>
 
 </html>
