@@ -46,32 +46,110 @@ newLine (12, objVertCoord, 'x1','x2');
 newLine (24, objHorizCoord, 'y1','y2');
 
 /* Code to move the square figure*/
+let square = document.getElementById('square');
+let x = square.getAttribute('x');
+let y = square.getAttribute('y');
+
 
 window.addEventListener('keydown', e =>{
 
-   // console.log(e)
    switch(e.code) {
       case 'ArrowUp':
          console.log('up');
+         if(y == 28) {
+            log(y)
+            y = 28 - 26;
+            square.setAttribute('y', y);
+            log(square);
+         } else if (y == 2) {
+            return;
+         }
+         else {
+            log(y)
+            y -= 27;
+            log(y)
+            square.setAttribute('y', y)
+         }
          break;
       case 'ArrowDown':
          console.log('down');
+      if(y == 2) {
+            log(typeof(y))
+            y = 2 + 26;
+            square.setAttribute('y', y);
+            log(square);
+         } else if (y == 676) {
+            return;
+         }
+         else {
+            log(y)
+            y += 27;
+            log(y)
+            square.setAttribute('y', y)
+         }
          break;
       case 'ArrowLeft':
          console.log('left');
+         if(x == 28) {
+            log(x)
+            x = 28 - 26;
+            square.setAttribute('x', x);
+            log(square);
+         } else if (x == 2) {
+            return;
+         }
+         else {
+            log(x)
+            x -= 27;
+            log(x)
+            square.setAttribute('x', x)
+         }
+
          break;
       case 'ArrowRight':
          console.log('Right');
+         move1(x);
+
          break;
       default:
          console.log('Ignorder')
    }
 });
+//`'${coor1}'`
+function move1 (coor1, arg1, arg2) {
+   log(typeof(coor1))//string
+   if(coor1 == 2) {
+      coor1 = 2 + 26;
+      log(typeof(coor1))//number
+      log(`'${coor1}'`)
+      square.setAttribute('coor1', coor1);
+      log(square);
+   } 
+   else {
+      log(coor1);
+      coor1 += 27;
+      log(coor1);
+      square.setAttribute('coor1', 'coor1')
+   }
+}
+// else if (coor1 == 352) {
+//    return;
+// }
 
-/* Для себя:
-за left и Right отвечает координаты х сначала х = 3 + 25, дальше 28 умножаем на 2, тогда фигура будет двигатся ровно по квадрату.
-за up и down отвечает координаты у, сначала у+= 3 + 25, чтобы получилось 28, дальше 28 умножаем на 2,
+function move2 (coor2) {
+   if(x == 28) {
+      log(x)
+      x = 28 - 26;
+      square.setAttribute('x', x);
+      log(square);
+   } else if (x == 2) {
+      return;
+   }
+   else {
+      log(x)
+      x -= 27;
+      log(x)
+      square.setAttribute('x', x)
+   }   
+}
 
-задание Написать функцию которая будет это делать автоматом, 
-напоминание: в белой тетради написала уже расчет посмотри.
-*/
