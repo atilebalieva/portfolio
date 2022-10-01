@@ -1,0 +1,168 @@
+*,
+::after,
+::before {
+   box-sizing: border-box;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+.container {
+   max-width: 700px;
+   margin: 0 auto;
+   padding: 0 20px;
+}
+
+header {
+background: url(images/To_Do_List.webp) 100% no-repeat;
+background-size: cover;
+height: 50vh;
+}
+.to-do-block {
+   margin-top: -33%;
+}
+
+.to-do-block h1 {
+   font-size: 2rem;
+   color: white;
+   text-transform: uppercase;
+}
+
+.to-do-task{
+   margin: 1rem 0 2rem 0;
+   position: relative;
+}
+
+#task,
+#button,
+#deleteBtn,
+.to-do-list {
+   border-radius: 7px;
+   color: rgb(73, 73, 73);
+   border: 1px solid green;
+
+}
+#task {
+   width: 100%;
+   padding: 15px;
+}
+
+#deleteBtn {
+   position: absolute;
+   top: 12%;
+   right: 2%;
+}
+
+#deleteBtn,
+#button{
+   background-color: rgb(11, 205, 11);
+   color: white;
+   padding: 7px 10px;
+   cursor: pointer;   
+}
+
+#button {
+position: absolute;
+top: 17%;
+right: 2%;
+z-index: 2;
+transform: translateX(2px);
+}
+
+#button:disabled,
+button[disabled] {
+   opacity: 0.5;
+}
+
+.to-do-list {
+   height: 350px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   background-color: white;
+   overflow: scroll;
+}
+
+.tasks-style {
+   border-bottom: 1px solid rgb(199, 197, 197);
+   padding: 10px 20px;
+   position: relative;
+}
+
+.add-info {
+   display: flex;
+   justify-content: space-between;
+   padding: 10px 20px;
+   z-index: 11;
+}
+
+.info {
+   overflow: scroll;
+   height: 400px;
+}
+
+img {
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   object-fit: cover;
+   display: block;
+   align-self: center;
+}
+
+.names {
+   display: flex;
+   border-bottom: 1px solid rgb(206, 203, 203);
+   padding-left: 10px;
+   min-height: 70px;
+}
+
+ul {
+   margin: 0;
+}
+
+li div {
+   flex-grow: 1;
+   padding-left: 30px;
+
+}
+
+.names-info {
+padding: 10px 10px 10px 20px;   
+}
+
+.names-info+p {
+   font-weight: bold;
+}
+
+li.hide {
+   display: none;
+}
+
+.back-follow {
+   background-color: transparent;
+   text-decoration:underline;
+   outline: none;
+   border: none;
+   color: rgb(108, 83, 121);
+   font-size: 15px;
+
+}
+
+img {
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   object-fit: cover;
+   display: block;
+   align-self: center;
+}
+
+.hide {
+   display: none;
+};
+
+
+
+
+

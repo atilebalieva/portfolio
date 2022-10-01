@@ -2,8 +2,8 @@ const userName = document.querySelector('#name');
 const gameField = document.querySelector('.field');
 let allUsers = {};
 
-function myFunction(user, scr) {
-   setItem (user, scr);
+function createUserButtonElements(user, score) {
+   setUsersToLocalStorage(user, score);
 
    const gameBlock = document.createElement('div');
    gameBlock.classList.add('game_block');
@@ -12,11 +12,11 @@ function myFunction(user, scr) {
    button.classList.add('btn-hide');
    button.innerText = user;
 
-   let score = document.createElement('span')
-   score.classList.add('score');
-   score.setAttribute('id', 'score-' + user);
-   score.innerText = `(${scr})`;
-   button.append(score);
+   let scoreSpan = document.createElement('span')
+   scoreSpan.classList.add('score');
+   scoreSpan.setAttribute('id', 'score-' + user);
+   scoreSpan.innerText = `(${score})`;
+   button.append(scoreSpan);
 
    const symbol = document.createElement('span');
    symbol.classList.add('symbol');
@@ -57,9 +57,7 @@ function myFunction(user, scr) {
 
    remove.addEventListener('click', () => {
       deleteBlock (user);
-      // setItem (user, scr
 
-      //    delete 
    });
 
 };
@@ -99,46 +97,46 @@ function doPlay(name) {
 
    let newScore = parseInt(n) + correctAnswers;
    scoreSpan.innerText = `(${newScore})`;
-   setItem (name, newScore);
+   setUsersToLocalStorage (name, newScore);
 
 };
 
-function update (user, scr) {
+function update (user, score) {
    let scoreField = document.getElementById('score-' + user);  
-   scoreField.innerText = `(${scr})`;
-   setItem (user, scr);
+   scoreField.innerText = `(${score})`;
+   setUsersToLocalStorage (user, score);
 }
 
-function deleteBlock (user,scr) {
+function deleteBlock (user,score) {
 const deleteGameBlock = document.getElementById('game-block' + user);
 deleteGameBlock.remove();
-setItem (user, scr);
+setUsersToLocalStorage (user, score);
 }
 
-function setItem (user, scr) {
-   allUsers[user] = scr;
+function setUsersToLocalStorage (user, score) {
+   allUsers[user] = score;
    localStorage.setItem('users', JSON.stringify(allUsers));
 };
 
-function getItem () {
+function getUsersFromLocalStorage() {
    const loadedUsers = localStorage.getItem('users');
 
    if(loadedUsers !== null) {
       allUsers = JSON.parse(loadedUsers);
       for (u in allUsers) {
-         myFunction(u, allUsers[u]);
+         createUserButtonElements(u, allUsers[u]);
       }
    };
 
 };
 
-function onButtonClick () {
+function onAddButtonClick () {
    const userFromInput = userName.value;
 
-   myFunction(userFromInput, 0);
+   createUserButtonElements(userFromInput, 0);
    userName.value = '';
 };
 
-getItem();
+getUsersFromLocalStorage();
 
 
