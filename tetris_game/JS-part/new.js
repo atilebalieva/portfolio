@@ -108,28 +108,39 @@ window.addEventListener('keydown', e =>{
          break;
       case 'ArrowRight':
          console.log('Right');
-         move1(x);
-
+         if(x == 2) {
+            log(typeof(x))
+            x = 2 + 26;
+            square.setAttribute('x', x);
+            log(square);
+         } else if (x == 352) {
+            return;
+         }
+         else {
+            log(x)
+            x += 27;
+            log(x)
+            square.setAttribute('x', x)
+         }
          break;
       default:
          console.log('Ignorder')
    }
 });
 //`'${coor1}'`
-function move1 (coor1, arg1, arg2) {
-   log(typeof(coor1))//string
+/* function move1 (coor1, arg1) {
    if(coor1 == 2) {
+      log(arg1)
       coor1 = 2 + 26;
-      log(typeof(coor1))//number
-      log(`'${coor1}'`)
-      square.setAttribute('coor1', coor1);
+      square.setAttribute(arg1, coor1);
       log(square);
    } 
    else {
       log(coor1);
       coor1 += 27;
       log(coor1);
-      square.setAttribute('coor1', 'coor1')
+      log(arg1)
+      square.setAttribute(arg1,coor1 )
    }
 }
 // else if (coor1 == 352) {
@@ -151,5 +162,5 @@ function move2 (coor2) {
       log(x)
       square.setAttribute('x', x)
    }   
-}
+} */
 
