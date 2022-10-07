@@ -72,17 +72,25 @@ function randomColor() {
    let xCoordinateOfSquare = square.getAttribute('x');
    let yCoordinateOfSquare = square.getAttribute('y');
 
+   // let coordinates = {
+   //    x: square.getAttribute('x'),
+   //    y: square.getAttribute('y')
+   // }
+
+
    setInterval(() => {
-      if(yCoordinateOfSquare == 2) {
-           yCoordinateOfSquare = 2 + 26;
-           square.setAttribute('y', yCoordinateOfSquare);
-        } else if (yCoordinateOfSquare == 676) {
-           return;
-        }
-        else {
-           yCoordinateOfSquare += 27;
-           square.setAttribute('y', yCoordinateOfSquare)
-        }
+      // if(yCoordinateOfSquare == 2) {
+      //      yCoordinateOfSquare = 2 + 26;
+      //      square.setAttribute('y', yCoordinateOfSquare);
+      //   } else if (yCoordinateOfSquare == 676) {
+      //      return;
+      //   }
+      //   else {
+      //      yCoordinateOfSquare += 27;
+      //      square.setAttribute('y', yCoordinateOfSquare)
+      //   }
+      yCoordinateOfSquare = move1(yCoordinateOfSquare, 'y');
+      
         
      }, 1000);
 
@@ -146,17 +154,33 @@ function randomColor() {
 
 };
 
+function move1(coor1, arg1) {
+   if(coor1 == 2) {
+      log(coor1);
+    return  coor1 = 2 + 26;
+   // square.setAttribute(arg1, coor1.value);//28
+   } 
+   else {
+      log(coor1)
+      return   coor1+= 27;
+   // square.setAttribute(arg1, coor1.value)
+   }
+// else if (coor1 == 352) {
+//    return;
+// }
+
+} 
+
 // function move1(coor1, arg1) {
-//    if(coor1 == 2) {
-//     return  coor1 = 2 + 26;
-//       // square.setAttribute(arg1, coor1);//28
+//    if(coor1.value == 2) {
+//       coor1.value = 2 + 26;
+//    log(coor1.value);
+//    // square.setAttribute(arg1, coor1.value);//28
 //    } 
 //    else {
-//       log(coor1);
-//       log(coor1);
-//       log(arg1)
-//      return coor1+= 27;
-//    //  return  square.setAttribute(arg1, coor1 )
+//       coor1.value+= 27;
+//       log(coor1.value)
+//    // square.setAttribute(arg1, coor1.value)
 //    }
 // // else if (coor1 == 352) {
 // //    return;
