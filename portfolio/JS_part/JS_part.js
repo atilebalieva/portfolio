@@ -4,8 +4,8 @@ function log (text) {
 
 /* close/open button code */
 
-let closeOpenBtn = document.getElementById('close-btn');
-let asidePart = document.getElementById('aside-part');
+let closeOpenBtn = document.querySelector('.close-btn');
+let asidePart = document.querySelector('aside');
 let mainContent = document.querySelector('#main-content');
 
 closeOpenBtn.addEventListener('click', () => {
@@ -13,14 +13,13 @@ closeOpenBtn.addEventListener('click', () => {
 if(closeOpenBtn.innerText === 'Close') {
   asidePart.classList.add('hide');
   closeOpenBtn.innerText = 'Open';
-  // closeOpenBtn.classList.toggle('open-btn');
-  mainContent.style.width = '90%';
-
+  closeOpenBtn.style.cssText = 'left: 0%; border-radius: 0 14px 14px 0'
+  mainContent.style.width = '100%';
 }
 else if(closeOpenBtn.innerText === 'Open') {
   asidePart.classList.remove('hide');
   closeOpenBtn.innerText = 'Close';
-  // closeOpenBtn.classList.remove('open-btn');
+  closeOpenBtn.style.cssText = 'left: 23%; border-radius: 12px'
   mainContent.style.width = '75%';
 };
   
@@ -28,8 +27,33 @@ else if(closeOpenBtn.innerText === 'Open') {
 
 /* transform header info*/
 
-let header = document.querySelectorAll('.header-info');
-log(header)
+let text = document.querySelector('.header-info');//    <h2 class="header-info self_rep">Web developer</h2>
+let strText= text.textContent; //Web developer
+let splitText = strText.split(''); //['W', 'e', 'b', ' ', 'd', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r']
+text.innerText = "";
+
+for(let i = 0; i  < splitText.length; i++) {
+  text.innerHTML += '<span>' + splitText[i] + '</span>'
+} 
+
+let char = 0;
+
+let timer = setInterval((onTick),50);
+
+function onTick() {
+  const span = text.querySelectorAll('span')[char];
+  log(span[1])
+  // span[char].classList.add('fade');
+  char++;
+  if(char === splitText.length);
+  complete();
+  return;
+};
+
+function complete() {
+  clearInterval(timer);
+  timer = null;
+};
 
 
 

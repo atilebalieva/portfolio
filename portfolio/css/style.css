@@ -103,6 +103,7 @@ main {
 
 /* aside style */
 
+<<<<<<< HEAD
 aside {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -116,6 +117,9 @@ aside {
 >>>>>>> 1cf523e (Update)
 =======
 >>>>>>> 37e426c (Updated portfolio)
+=======
+aside{
+>>>>>>> 61fe9be (Updated)
    width: 25%;
    background: linear-gradient(to right, #dad3e4 0%, #fff 50%, #f1e1f5 100%);
 =======
@@ -126,6 +130,8 @@ aside {
    position: relative;
    background: linear-gradient(to right, #dad3e4 0%, rgb(238, 233, 233) 50%, #f1e1f5 100%);
    display: flex;
+   /* transition: display 2s cubic-bezier(.19, 1,.2,1); */
+
 }
 
 .close-btn{
@@ -142,14 +148,14 @@ aside {
    font-size: 1rem;
    box-shadow: 0px 0px 3px rgb(157, 142, 142) ;
    z-index: 11;
+   transition: all 1.5s cubic-bezier(.19, 1,.2,1);
+
 };
 
-.close-btn.open-btn{
-   position: absolute;
-   top: 50%;
+.open-btn.close-btn{
    left: 0%;
    border-radius: 0 14px 14px 0;
-   color: red;
+   transition: all 2s cubic-bezier(.19, 1,.2,1);
 }
 
 .hide {
@@ -256,9 +262,9 @@ top: 50%;
 
 /*main_content*/
 
-
 .main_content {
    width: 75%;
+<<<<<<< HEAD
 <<<<<<< HEAD
    /* position: absolute;
    top: 0;
@@ -285,6 +291,9 @@ position: fixed;
 >>>>>>> 37e426c (Updated portfolio)
 =======
 >>>>>>> 21a9cc2 (Updated)
+=======
+   transition: width 2s cubic-bezier(.19, 1,.2,1);
+>>>>>>> 61fe9be (Updated)
 }
 
 #home,
@@ -727,4 +736,16 @@ filter: blur(5px);
 .git_button {
    border-radius: 4px;
 }
+<<<<<<< HEAD
 >>>>>>> 686ea53 (Updated)
+=======
+
+span{
+   opacity: 0;
+   transition: all 0.4 ease;
+}
+
+span.fade {
+   opacity: 1;
+}
+>>>>>>> 61fe9be (Updated)
