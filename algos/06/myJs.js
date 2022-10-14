@@ -5,9 +5,9 @@ let allUsers = {};
 function createUserButtonElements(user, score) {
    setUsersToLocalStorage(user, score);
 
-   const gameBlock = document.createElement('div');
-   gameBlock.classList.add('game_block');
-   gameBlock.setAttribute('id', 'game-block' + user);
+   const gameArea = document.createElement('div');
+   gameArea.classList.add('game_block');
+   gameArea.setAttribute('id', 'game-block' + user);
    const button = document.createElement('button');
    button.classList.add('btn-hide');
    button.innerText = user;
@@ -22,13 +22,13 @@ function createUserButtonElements(user, score) {
    symbol.classList.add('symbol');
    button.append(symbol);
 
-   gameBlock.append(button);
-   gameField.append(gameBlock);
+   gameArea.append(button);
+   gameField.append(gameArea);
 
    const ulist = document.createElement('ul')
    ulist.setAttribute('id', 'list-' + user);
    ulist.classList.add('list')
-   gameBlock.append(ulist);
+   gameArea.append(ulist);
 
    const play = document.createElement('li');
    play.innerText = 'Play';

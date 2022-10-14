@@ -27,35 +27,36 @@ else if(closeOpenBtn.innerText === 'Open') {
 
 /* transform header info*/
 
-let text = document.querySelector('.header-info');//    <h2 class="header-info self_rep">Web developer</h2>
+let text = document.querySelectorAll('.header-info');//    <h2 class="header-info self_rep">Web developer</h2>
 let strText= text.textContent; //Web developer
 let splitText = strText.split(''); //['W', 'e', 'b', ' ', 'd', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r']
 text.innerText = "";
 
 for(let i = 0; i  < splitText.length; i++) {
-  text.innerHTML += '<span>' + splitText[i] + '</span>'
+  if(splitText[i] === ' '){
+    // text.innerHTML += '<br/>'
+    text.innerHTML += '<span class = "each-header-letter">' + '&nbsp' + '</span>' 
+  } else {
+    text.innerHTML += '<span class = "each-header-letter">' + splitText[i] + '</span>'
+  }
 } 
 
 let char = 0;
 
-let timer = setInterval((onTick),50);
+let timer = setInterval(onTick,80);
 
 function onTick() {
   const span = text.querySelectorAll('span')[char];
-  log(span[1])
-  // span[char].classList.add('fade');
+  span.classList.add('fade');
   char++;
-  if(char === splitText.length);
-  complete();
-  return;
+  log(char)
+  if(char === splitText.length){
+    complete();
+    return;
+  }
 };
 
 function complete() {
   clearInterval(timer);
   timer = null;
 };
-
-
-
-
-
