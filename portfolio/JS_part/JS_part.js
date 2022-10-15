@@ -27,7 +27,7 @@ else if(closeOpenBtn.innerText === 'Open') {
 
 /* transform header info*/
 
-let text = document.querySelectorAll('.header-info');//    <h2 class="header-info self_rep">Web developer</h2>
+let text = document.querySelector('.header-info');//    <h2 class="header-info self_rep">Web developer</h2>
 let strText= text.textContent; //Web developer
 let splitText = strText.split(''); //['W', 'e', 'b', ' ', 'd', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r']
 text.innerText = "";
