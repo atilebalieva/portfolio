@@ -58,9 +58,7 @@ let currentSquare = null;
 
 let resetButton = document.getElementById('reset-button');
 
-resetButton.addEventListener('click', () => {
-   onResetButtonClick();
-});
+resetButton.addEventListener('click', onResetButtonClick);
 
 function onResetButtonClick() {
    createNewSquare();
@@ -78,13 +76,17 @@ function randomColor() {
    currentSquare.style.fill =randomColor();
    playArea.appendChild(currentSquare);
 
-};//1
+};
 
 function handleTimer() {
    setInterval(() => {
-      moveSquareDown();//3
+      if(pause) {
+         return;
+      }
+
+      moveSquareDown();
      }, 1000);
-};//2
+};
 
 function moveSquareDown() {
    let yCoordinateOfSquare = parseInt(currentSquare.getAttribute('y'));
@@ -102,20 +104,23 @@ function handleKeyDownEventListener() {
    let yCoordinateOfSquare = currentSquare.getAttribute('y');
 
    window.addEventListener('keydown', e =>{
+      if(pause) {
+         return;
+      }
       switch(e.code) {
          case 'ArrowDown':
-            moveSquareDown();//5
+            moveSquareDown();
             break;
          case 'ArrowLeft':
-            moveSquareLeft();//6
+            moveSquareLeft();
             break;
          case 'ArrowRight':
-            moveSquareRight();//7
+            moveSquareRight();
             break;
       }
    });
 
-};//4
+};
 
 
 function moveSquareLeft() {
@@ -124,17 +129,6 @@ function moveSquareLeft() {
       xCoordinateOfSquare -= 27;
       currentSquare.setAttribute('x', xCoordinateOfSquare);
    }
-
-   // if(xCoordinateOfSquare == 28) {
-   //    xCoordinateOfSquare = 28 - 26; //2
-   //    currentSquare.setAttribute('x', xCoordinateOfSquare);
-   // } else if (xCoordinateOfSquare == 2) {
-   //    return;
-   // }
-   // else {
-   //    xCoordinateOfSquare -= 27;
-   //    currentSquare.setAttribute('x', xCoordinateOfSquare)
-   // }
 };
 
 function moveSquareRight() {
@@ -144,19 +138,19 @@ function moveSquareRight() {
       xCoordinateOfSquare += 27;
       currentSquare.setAttribute('x', xCoordinateOfSquare);
    }
-
-   // if(xCoordinateOfSquare == 2) {
-   //    log(typeof(xCoordinateOfSquare))
-   //    xCoordinateOfSquare = 2 + 26;
-   //    currentSquare.setAttribute('x', xCoordinateOfSquare);
-   // } else if (xCoordinateOfSquare == 352) {
-   //    return;
-   // }
-   // else {
-   //    xCoordinateOfSquare += 27;
-   //    currentSquare.setAttribute('x', xCoordinateOfSquare)
-   // }
 }
+
+//pause-button
+
+let pause = false;
+
+let pauseButton = document.getElementById('pause-button');
+pauseButton.addEventListener('click', () => pause = !pause);
+
+
+
+
+
 
 //Summary what we did:
 // Changes in the Tetris game

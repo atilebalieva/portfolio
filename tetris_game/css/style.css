@@ -37,7 +37,8 @@ main {
 
 .info_tab,
 aside,
-.mobile-btn {
+.mobile-btn,
+#play-area{
    border: 5px solid rgb(176, 216, 31);
    background-color: rgb(25, 25, 65);
 }
@@ -93,19 +94,12 @@ tr, th, td,
    margin-left: 0.7rem;
 }
 
-/* #play-area {
-   height: 84%;
-} */
-
-
-/* #play-area {
-   background-image: url(../images/play-area-bg.png);
-   background-size: cover;
-   background-repeat: no-repeat;
-   max-width: 23.8rem;
-min-height: 82vh;
-} */
-
+#play-area {
+   max-width: 19.8rem;
+   /* min-height: 72vh; */
+   display: inline-flex;
+   flex-wrap: wrap;
+}
 
 #play-rect {
    position: relative;
@@ -294,3 +288,11 @@ td:hover {
    margin: 0 auto;
 }
 
+.cellStyle {
+   border-left: 1px solid;
+   border-bottom: 1px solid;
+   border-color: #3cb9eb;
+   width: 30.6px;
+   height: 30.6px;
+   align-content: stretch;
+}
