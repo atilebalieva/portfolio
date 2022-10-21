@@ -1,0 +1,118 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.aside {
+  width: 30%;
+  background: url(images/bg-main-desktop.png);
+}
+
+img {
+  width: 400px;
+  height: 200px;
+  display: block;
+}
+
+.front {
+  position: absolute;
+  top: 25%;
+  left: 7%;
+}
+
+.back {
+  position: absolute;
+  top: 57%;
+  left: 14%;
+}
+
+.form-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.user-info {
+  color: white;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+#card-number-text {
+  position: absolute;
+  top: 35%;
+  left: 8%;
+  font-size: 27px;
+  letter-spacing: 6px;
+
+}
+
+#card-name-text {
+   position: absolute;
+  top: 41%;
+  left: 10%;  
+}
+
+#exp-date-text {
+   position: absolute;
+   top: 41%;
+   left: 29%;  
+   font-size: 16px;
+}
+
+#cvc-text {
+   position: absolute;
+   top: 66%;
+   left: 34%; 
+}
+
+.form-info {
+text-transform: uppercase;
+}
+
+input {
+   margin: 15px 0 15px 0;
+   height: 45px;
+   border-radius: 6px;
+   outline: none;
+   border: 1px solid grey;
+   width: 400px;
+   padding: 10px;
+}
+
+#month,#year {
+   width: 80px;
+}
+
+#cvc{
+   width: 157px;
+}
+
+#confirm {
+   width: 400px;
+   margin: 15px 0 15px 0;
+   padding: 10px;
+   height: 45px;
+   background-color: #3d1c77;
+   font-size: 14px;
+   color: aliceblue;
+   text-transform: uppercase;
+   border: none;
+   border-radius: 8px;
+}
