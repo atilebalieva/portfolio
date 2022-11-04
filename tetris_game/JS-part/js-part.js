@@ -3,15 +3,14 @@ function log(func) {
 }
 
 const playArea = document.getElementById("play-area");
-const defaultColor = "#fd1cb";
-
+const defaultColor = "rgb(25, 25, 65)";
 function createNewDivCell() {
   let newDiv = document.createElement("div");
   newDiv.classList.add("cellStyle");
   return playArea.appendChild(newDiv);
 }
 
-const divArray = new Array(20); //20 rows
+const divArray = new Array(20);
 
 for (let i = 0; i < divArray.length; i++) {
   divArray[i] = Array.from({ length: 10 }).map(function (el) {
@@ -44,61 +43,157 @@ const modelArray = [
 ];
 
 const allShapes = {
-  j: [
-    [1, 0, 0],
-    [1, 1, 1],
-  ],
-  l: [
-    [0, 0, 1],
-    [1, 1, 1],
-  ],
-  z: [
-    [1, 1, 0],
-    [0, 1, 1],
-  ],
-  i: [[1, 1, 1, 1]],
-  o: [
-    [1, 1],
-    [1, 1],
-  ],
-  t: [
-    [0, 1, 0],
-    [1, 1, 1],
-  ],
-  s: [
-    [0, 1, 1],
-    [1, 1, 0],
-  ],
+  L: {
+    1: [
+      //allshapes ['L'][0]
+      [1, 0],
+      [1, 0],
+      [1, 1],
+    ],
+    2: [
+      //allshapes ['L'][2]
+      [1, 1, 1],
+      [1, 0, 0],
+    ],
+    3: [
+      //allshapes ['L'][3]
+      [1, 1],
+      [0, 1],
+      [0, 1],
+    ],
+    4: [
+      //allshapes ['L'][4]
+      [0, 0, 1],
+      [1, 1, 1],
+    ],
+  },
+
+  Z: {
+    1: [
+      [1, 1, 0],
+      [0, 1, 1],
+    ],
+    2: [
+      [0, 1],
+      [1, 1],
+      [1, 0],
+    ],
+  },
+  I: {
+    1: [[1, 1, 1, 1]],
+    2: [[1], [1], [1], [1]],
+  },
+  O: {
+    1: [
+      [1, 1],
+      [1, 1],
+    ],
+  },
+  T: {
+    1: [
+      [0, 1, 0],
+      [1, 1, 1],
+    ],
+    2: [
+      [1, 0],
+      [1, 1],
+      [1, 0],
+    ],
+    3: [
+      [1, 1, 1],
+      [0, 1, 0],
+    ],
+    4: [[0, 1][(1, 1)][(0, 1)]],
+  },
+  S: {
+    1: [
+      [0, 1, 1],
+      [1, 1, 0],
+    ],
+    2: [
+      [1, 0],
+      [1, 1],
+      [0, 1],
+    ],
+  },
 };
 
-const getKeysInAllShapes = Object.keys(allShapes); //['j','k'...]
-const randomKeys =
-  getKeysInAllShapes[Math.floor(Math.random() * getKeysInAllShapes.length)];
+// function copyCurrentShapeToModelArray(currentShape) {
+//   let randomRow = Math.floor(Math.random() * 16);
+//   let randomColumn = Math.floor(Math.random() * 7);
+//   update();
+//   for (let i = 0; i < currentShape.length; i++) {
+//     for (let j = 0; j < currentShape[i].length; j++) {
+//       modelArray[randomRow + i][randomColumn + j] = currentShape[i][j];
+//     }
+//   }
+//   refreshDivArray();
+// }
+// function currentShape() {
+//   let getKeysInAllShapes = Object.keys(allShapes);
+//   log(getKeysInAllShapes);
+//   let randomKeys =
+//     getKeysInAllShapes[Math.floor(Math.random() * getKeysInAllShapes.length)];
+//   return allShapes[randomKeys][1];
+// }
 
-function copyCurrentShapeToModelArray() {
-  let randomRow = Math.floor(Math.random() * 18);
-  let randomColumn = Math.floor(Math.random() * 6);
-  let currentShape = allShapes[randomKeys];
+// log(Object.keys(allShapes["L"]).length); //first figure L
+
+let nextShape = null;
+
+for (let i = 1; i <= Object.keys(allShapes["L"]).length; i++) {
+  // log(allShapes["L"][1 + i]);
+}
+
+function copyCurrentShapeToModelArray(currentShape) {
+  let randomRow = Math.floor(Math.random() * 16);
+  let randomColumn = Math.floor(Math.random() * 7);
+
+  update();
 
   for (let i = 0; i < currentShape.length; i++) {
     for (let j = 0; j < currentShape[i].length; j++) {
       modelArray[randomRow + i][randomColumn + j] = currentShape[i][j];
     }
   }
+  refreshDivArray();
 }
 
-function randomColor() {
-  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+window.addEventListener("keydown", (e) => {
+  if (e.code === "ArrowUp") {
+    let counter = 0;
+    allShapes["L"][2 + counter];
+  }
+  // for (let i = 1; i <= Object.keys(allShapes["L"]).length; i++) {
+
+  // }
+});
+
+function update() {
+  for (let i = 0; i < modelArray.length; i++) {
+    for (let j = 0; j < modelArray[i].length; j++) {
+      if (modelArray[i][j] === 1) {
+        modelArray[i][j] = "";
+      }
+    }
+  }
+}
+
+function random_bg_color() {
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+  return "rgb(" + x + "," + y + "," + z + ")";
 }
 
 function refreshDivArray() {
-  let color = randomColor();
+  let color = random_bg_color();
 
   for (let i = 0; i < modelArray.length; i++) {
     for (let j = 0; j < modelArray[i].length; j++) {
-      if (modelArray[i][j] == "" || modelArray[i][j] == 0) {
+      if (modelArray[i][j] === "" || modelArray[i][j] === 0) {
         divArray[i][j].style.background = defaultColor;
-      } else if (color == defaultColor) {
+      } else if (color === defaultColor) {
         color = "green";
         divArray[i][j].style.background = color;
       } else {
@@ -108,10 +203,8 @@ function refreshDivArray() {
   }
 }
 
-let resetButton = document.getElementById("reset-button");
-resetButton.addEventListener("click", onResetButtonClick);
+let playButton = document.getElementById("play-button");
 
-function onResetButtonClick() {
+playButton.addEventListener("click", () => {
   copyCurrentShapeToModelArray();
-  refreshDivArray();
-}
+});
