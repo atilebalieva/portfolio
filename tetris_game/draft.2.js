@@ -67,6 +67,7 @@ const allShapes = {
       [1, 1, 1],
     ],
   },
+
   Z: {
     1: [
       [1, 1, 0],
@@ -117,16 +118,15 @@ const allShapes = {
   },
 };
 
-function currentShape() {
+function currentShape(num = 1) {
   let getKeysInAllShapes = Object.keys(allShapes);
-  return (randomKeys =
-    getKeysInAllShapes[Math.floor(Math.random() * getKeysInAllShapes.length)]);
+  let randomKeys =
+    getKeysInAllShapes[Math.floor(Math.random() * getKeysInAllShapes.length)];
+  return allShapes[randomKeys][num];
 }
 
-function copyCurrentShapeToModelArray(shapes) {
+function copyCurrentShapeToModelArray(currentShape) {
   update();
-
-  let currentShape = shapes[1];
 
   for (let i = 0; i < currentShape.length; i++) {
     for (let j = 0; j < currentShape[i].length; j++) {
@@ -135,18 +135,23 @@ function copyCurrentShapeToModelArray(shapes) {
   }
 
   refreshDivArray();
-  nextPosition(shapes);
 }
 
-function nextPosition(shapes) {
-  let currentPosition = 1;
-  let keys = Object.keys(shapes);
-  log(keys.lenght);
+nextShape();
 
+function nextShape() {
+  let counter = { i: 1 };
   window.addEventListener("keydown", (e) => {
-    if (e.code === "ArrowUp" && currentPosition <= 4) {
-      currentPosition++;
-      // copyCurrentShapeToModelArray(shapes[1 + currentPosition]);
+    counter["i"]++; //3
+    if (e.code === "ArrowUp" && counter["i"] < 5) {
+      copyCurrentShapeToModelArray(currentShape([counter["i"]]));
+      log(allShapes["L"][counter["i"]]);
+    }
+    if (counter["i"] > 4) {
+      counter["i"] = 1;
+      copyCurrentShapeToModelArray(
+        copyCurrentShapeToModelArray(currentShape([counter["i"]]))
+      );
     }
   });
 }
@@ -184,8 +189,21 @@ function refreshDivArray() {
     }
   }
 }
+
 let playButton = document.getElementById("play-button");
 
 playButton.addEventListener("click", () => {
-  copyCurrentShapeToModelArray(allShapes[currentShape()]);
+  copyCurrentShapeToModelArray(currentShape());
 });
+
+// function copyCurrentShapeToModelArray(currentShape) {
+//   let randomRow = Math.floor(Math.random() * 16);
+//   let randomColumn = Math.floor(Math.random() * 7);
+//   update();
+//   for (let i = 0; i < currentShape.length; i++) {
+//     for (let j = 0; j < currentShape[i].length; j++) {
+//       modelArray[randomRow + i][randomColumn + j] = currentShape[i][j];
+//     }
+//   }
+//   refreshDivArray();
+// }
