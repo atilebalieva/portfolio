@@ -4,21 +4,11 @@ function log(func) {
 
 const playArea = document.getElementById("play-area");
 const defaultColor = "rgb(25, 25, 65)";
-function createNewDivCell() {
-  let newDiv = document.createElement("div");
-  newDiv.classList.add("cellStyle");
-  return playArea.appendChild(newDiv);
-}
-
-const divArray = new Array(20);
-
-for (let i = 0; i < divArray.length; i++) {
-  divArray[i] = Array.from({ length: 10 }).map(function (el) {
-    el = createNewDivCell();
-    return el;
-  });
-}
-
+const playButton = document.getElementById("play-button");
+let currentShape = null;
+let currentPosition = 1;
+let randomRow = Math.floor(Math.random() * 16);
+let randomColumn = Math.floor(Math.random() * 7);
 const modelArray = [
   ["", "", "", "", "", "", "", "", "", ""],
   ["", "", "", "", "", "", "", "", "", ""],
@@ -45,24 +35,20 @@ const modelArray = [
 const allShapes = {
   L: {
     1: [
-      //allshapes ['L'][0]
       [1, 0],
       [1, 0],
       [1, 1],
     ],
     2: [
-      //allshapes ['L'][2]
       [1, 1, 1],
       [1, 0, 0],
     ],
     3: [
-      //allshapes ['L'][3]
       [1, 1],
       [0, 1],
       [0, 1],
     ],
     4: [
-      //allshapes ['L'][4]
       [0, 0, 1],
       [1, 1, 1],
     ],
@@ -117,41 +103,75 @@ const allShapes = {
   },
 };
 
-function currentShape() {
-  let getKeysInAllShapes = Object.keys(allShapes);
-  return (randomKeys =
-    getKeysInAllShapes[Math.floor(Math.random() * getKeysInAllShapes.length)]);
+function createNewDivCell() {
+  let newDiv = document.createElement("div");
+  newDiv.classList.add("cellStyle");
+  return playArea.appendChild(newDiv);
 }
 
-function copyCurrentShapeToModelArray(shapes) {
-  update();
+const divArray = new Array(20);
 
-  let currentShape = shapes[1];
-
-  for (let i = 0; i < currentShape.length; i++) {
-    for (let j = 0; j < currentShape[i].length; j++) {
-      modelArray[8 + i][4 + j] = currentShape[i][j];
-    }
-  }
-
-  refreshDivArray();
-  nextPosition(shapes);
-}
-
-function nextPosition(shapes) {
-  let currentPosition = 1;
-  let keys = Object.keys(shapes);
-  log(keys.lenght);
-
-  window.addEventListener("keydown", (e) => {
-    if (e.code === "ArrowUp" && currentPosition <= 4) {
-      currentPosition++;
-      // copyCurrentShapeToModelArray(shapes[1 + currentPosition]);
-    }
+for (let i = 0; i < divArray.length; i++) {
+  divArray[i] = Array.from({ length: 10 }).map(function (el) {
+    el = createNewDivCell();
+    return el;
   });
 }
 
-function update() {
+window.addEventListener("keydown", (e) => {
+  handleKeyDown(e);
+});
+
+function handleKeyDown(e) {
+  if (e.code === "ArrowUp") {
+    handleArrowUp();
+    copyCurrentShapeToModelArray();
+  }
+  if (e.code === "ArrowDown") {
+    log("ArrowDown");
+    // log(copyFirstShapeToModelArray(shape[1 + currentPosition]));
+    // currentPosition++;
+  }
+  if (e.code === "ArrowLeft") {
+    log("ArrowLeft");
+    // log(copyFirstShapeToModelArray(shape[1 + currentPosition]));
+    // currentPosition++;
+  }
+  if (e.code === "ArrowRight") {
+    log("ArrowRight");
+    // log(copyFirstShapeToModelArray(shape[1 + currentPosition]));
+    // currentPosition++;
+  }
+}
+
+function handleArrowUp() {
+  const positionCount = Object.keys(currentShape).length; //4
+  log("positionCount " + positionCount);
+
+  log("before-currentPosition " + currentPosition); //3
+  currentPosition++;
+
+  if (currentPosition > positionCount) {
+    currentPosition = 1;
+  }
+
+  log("after-currentPosition " + currentPosition);
+}
+
+function copyCurrentShapeToModelArray() {
+  cleanModelArray();
+  const shape = currentShape[currentPosition];
+
+  for (let i = 0; i < shape.length; i++) {
+    for (let j = 0; j < shape[i].length; j++) {
+      modelArray[randomRow + i][randomColumn + j] = shape[i][j];
+    }
+  }
+  log(shape);
+  refreshDivArray();
+}
+
+function cleanModelArray() {
   for (let i = 0; i < modelArray.length; i++) {
     for (let j = 0; j < modelArray[i].length; j++) {
       if (modelArray[i][j] === 1) {
@@ -166,6 +186,13 @@ function random_bg_color() {
   let y = Math.floor(Math.random() * 256);
   let z = Math.floor(Math.random() * 256);
   return "rgb(" + x + "," + y + "," + z + ")";
+}
+
+function setCurrentShape() {
+  let getKeysInAllShapes = Object.keys(allShapes);
+  let randomKeys =
+    getKeysInAllShapes[Math.floor(Math.random() * getKeysInAllShapes.length)];
+  currentShape = allShapes[randomKeys];
 }
 
 function refreshDivArray() {
@@ -184,8 +211,8 @@ function refreshDivArray() {
     }
   }
 }
-let playButton = document.getElementById("play-button");
 
 playButton.addEventListener("click", () => {
-  copyCurrentShapeToModelArray(allShapes[currentShape()]);
+  setCurrentShape();
+  copyCurrentShapeToModelArray();
 });
