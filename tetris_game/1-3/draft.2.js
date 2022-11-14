@@ -195,15 +195,3 @@ let playButton = document.getElementById("play-button");
 playButton.addEventListener("click", () => {
   copyCurrentShapeToModelArray(currentShape());
 });
-
-// function copyCurrentShapeToModelArray(currentShape) {
-//   let randomRow = Math.floor(Math.random() * 16);
-//   let randomColumn = Math.floor(Math.random() * 7);
-//   update();
-//   for (let i = 0; i < currentShape.length; i++) {
-//     for (let j = 0; j < currentShape[i].length; j++) {
-//       modelArray[randomRow + i][randomColumn + j] = currentShape[i][j];
-//     }
-//   }
-//   refreshDivArray();
-// }
