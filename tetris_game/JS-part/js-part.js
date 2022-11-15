@@ -5,10 +5,15 @@ function log(func) {
 const playArea = document.getElementById("play-area");
 const defaultColor = "rgb(25, 25, 65)";
 const playButton = document.getElementById("play-button");
+
 let currentShape = null;
 let currentPosition = 1;
-let randomRow = Math.floor(Math.random() * 16);
-let randomColumn = Math.floor(Math.random() * 7);
+
+let randomRow = Math.floor(Math.random() * 15);
+let randomColumn = Math.floor(Math.random() * 5);
+
+const divArray = new Array(20);
+
 const modelArray = [
   ["", "", "", "", "", "", "", "", "", ""],
   ["", "", "", "", "", "", "", "", "", ""],
@@ -88,7 +93,11 @@ const allShapes = {
       [1, 1, 1],
       [0, 1, 0],
     ],
-    4: [[0, 1][(1, 1)][(0, 1)]],
+    4: [
+      [0, 1],
+      [1, 1],
+      [0, 1],
+    ],
   },
   S: {
     1: [
@@ -109,8 +118,6 @@ function createNewDivCell() {
   return playArea.appendChild(newDiv);
 }
 
-const divArray = new Array(20);
-
 for (let i = 0; i < divArray.length; i++) {
   divArray[i] = Array.from({ length: 10 }).map(function (el) {
     el = createNewDivCell();
@@ -118,57 +125,21 @@ for (let i = 0; i < divArray.length; i++) {
   });
 }
 
-window.addEventListener("keydown", (e) => {
-  handleKeyDown(e);
-});
+function refreshDivArray() {
+  let color = random_bg_color();
 
-function handleKeyDown(e) {
-  if (e.code === "ArrowUp") {
-    handleArrowUp();
-    copyCurrentShapeToModelArray();
-  }
-  if (e.code === "ArrowDown") {
-    log("ArrowDown");
-    // log(copyFirstShapeToModelArray(shape[1 + currentPosition]));
-    // currentPosition++;
-  }
-  if (e.code === "ArrowLeft") {
-    log("ArrowLeft");
-    // log(copyFirstShapeToModelArray(shape[1 + currentPosition]));
-    // currentPosition++;
-  }
-  if (e.code === "ArrowRight") {
-    log("ArrowRight");
-    // log(copyFirstShapeToModelArray(shape[1 + currentPosition]));
-    // currentPosition++;
-  }
-}
-
-function handleArrowUp() {
-  const positionCount = Object.keys(currentShape).length; //4
-  log("positionCount " + positionCount);
-
-  log("before-currentPosition " + currentPosition); //3
-  currentPosition++;
-
-  if (currentPosition > positionCount) {
-    currentPosition = 1;
-  }
-
-  log("after-currentPosition " + currentPosition);
-}
-
-function copyCurrentShapeToModelArray() {
-  cleanModelArray();
-  const shape = currentShape[currentPosition];
-
-  for (let i = 0; i < shape.length; i++) {
-    for (let j = 0; j < shape[i].length; j++) {
-      modelArray[randomRow + i][randomColumn + j] = shape[i][j];
+  for (let i = 0; i < modelArray.length; i++) {
+    for (let j = 0; j < modelArray[i].length; j++) {
+      if (modelArray[i][j] === "" || modelArray[i][j] === 0) {
+        divArray[i][j].style.background = defaultColor;
+      } else if (color === defaultColor) {
+        color = "green";
+        divArray[i][j].style.background = color;
+      } else {
+        divArray[i][j].style.background = color;
+      }
     }
   }
-  log(shape);
-  refreshDivArray();
 }
 
 function cleanModelArray() {
@@ -195,21 +166,49 @@ function setCurrentShape() {
   currentShape = allShapes[randomKeys];
 }
 
-function refreshDivArray() {
-  let color = random_bg_color();
+window.addEventListener("keydown", (e) => {
+  handleKeyDown(e);
+});
 
-  for (let i = 0; i < modelArray.length; i++) {
-    for (let j = 0; j < modelArray[i].length; j++) {
-      if (modelArray[i][j] === "" || modelArray[i][j] === 0) {
-        divArray[i][j].style.background = defaultColor;
-      } else if (color === defaultColor) {
-        color = "green";
-        divArray[i][j].style.background = color;
-      } else {
-        divArray[i][j].style.background = color;
-      }
+function handleKeyDown(e) {
+  if (e.code === "ArrowUp") {
+    handleArrowUp();
+    copyCurrentShapeToModelArray();
+  }
+  if (e.code === "ArrowDown") {
+    log("ArrowDown");
+  }
+  if (e.code === "ArrowLeft") {
+    log("ArrowLeft");
+  }
+  if (e.code === "ArrowRight") {
+    log("ArrowRight");
+  }
+}
+
+function handleArrowUp() {
+  const positionCount = Object.keys(currentShape).length;
+
+  currentPosition++;
+
+  if (currentPosition > positionCount) {
+    currentPosition = 1;
+  }
+}
+
+function handleArrowDown() {}
+
+function copyCurrentShapeToModelArray() {
+  cleanModelArray();
+  const shape = currentShape[currentPosition];
+
+  for (let i = 0; i < shape.length; i++) {
+    for (let j = 0; j < shape[i].length; j++) {
+      modelArray[0 + i][0 + j] = shape[i][j];
     }
   }
+
+  refreshDivArray();
 }
 
 playButton.addEventListener("click", () => {
