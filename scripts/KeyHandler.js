@@ -1,33 +1,17 @@
-const KeyHandler = {
-  init: function() {
-    document.addEventListener('keydown', KeyHandler.onKeyDown);
-  },
+class KeyHandler {
+  #skater;
 
-  onKeyDown: function(event) {
+  constructor(skater) {
+    this.#skater = skater;
+
+    // Without *.bind(this), "this" is referencing to the DOM element, not the class itself.
+    document.addEventListener('keydown', this.onKeyDown.bind(this));
+  }
+
+  // ArrowDown ArrowLeft ArrowRight
+  onKeyDown(event) {
     if (event.code === "ArrowUp") {
-      KeyHandler.onArrowUp();
-    } else if (event.code === "ArrowDown") {
-      KeyHandler.onArrowDown();
-    } else if (event.code === "ArrowLeft") {
-      KeyHandler.onArrowLeft();
-    } else if (event.code === "ArrowRight") {
-      KeyHandler.onArrowRight();
+        this.#skater.jump();
     } 
-  },
-
-  onArrowUp: function() {
-    log("up");
-  },
-
-  onArrowDown: function() {
-    log("down");
-  },
-
-  onArrowLeft: function() {
-    log("left");
-  },
-
-  onArrowRight: function() {
-    log("right");
-  },
+  }
 }
