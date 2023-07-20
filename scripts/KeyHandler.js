@@ -21,9 +21,7 @@ class KeyHandler {
     } else if (event.code === "ArrowDown") {
       this.#skater.stop();
     } else if (event.code === "Space") {
-      this.#skater.fall();
-    } else if (event.code === "ArrowDown") {
-      this.#skater.stop();
+      this.#skater.fall()
     }
   }
 }
