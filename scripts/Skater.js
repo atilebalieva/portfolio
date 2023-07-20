@@ -2,8 +2,8 @@ class Skater {
   // List states the skater can be.
   #States = {
     IDLE: "IDLE",
-    ROLLING_LEFT: "ROLLING_LEFT",
     ROLLING_RIGHT: "ROLLING_RIGHT",
+    ROLLING_LEFT: "ROLLING_LEFT",
   }
 
   #StateImages = {
@@ -37,7 +37,7 @@ class Skater {
     },
   }
 
-  #image = byId("skater");
+  #image = getById("skater")
   #currentState = this.#States.IDLE;
 
   // List of states when changing from one state to another.
@@ -71,7 +71,7 @@ class Skater {
     }
 
     // If the previous rolling side was left, remove flipping. 
-    // Other the skater moves left instead of right.
+    // Otherwise the skater moves left instead of right.
     this.#image.classList.remove("flip-image");
 
     this.#changeStateImages = [
@@ -126,9 +126,9 @@ class Skater {
    
     this.#handleStateChange();
 
-    this.#currentState = this.#States.IDLE;
+    this.#currentState = this.#States.IDLE
   }
-
+  
   fall() {
     this.#changeStateImages = [
       this.#StateImages.IDLE,
@@ -139,7 +139,6 @@ class Skater {
 
     this.#currentState = this.#States.IDLE;
   }
-
 
   isChanging() {
     // If changeStates is not empty, the skater is changing from one state to another.
