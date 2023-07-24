@@ -1,9 +1,9 @@
 class Skater {
   // List states the skater can be.
   #States = {
-    IDLE: "IDLE",
-    ROLLING_RIGHT: "ROLLING_RIGHT",
-    ROLLING_LEFT: "ROLLING_LEFT",
+    IDLE: "idle",
+    ROLLING_RIGHT: "rolling-right",
+    ROLLING_LEFT: "rolling-left",
   }
 
   #StateImages = {
@@ -38,20 +38,25 @@ class Skater {
   }
 
   #image = getById("skater")
-  #currentState = this.#States.IDLE;
+  #state = this.#States.IDLE;
+  #scene;
 
   // List of states when changing from one state to another.
   #changeStateImages = [];
 
+  constructor(scene) {
+    this.#scene = scene;
+  }
+
   jump() {
     // Depending on the current state, we have to create a sequence of states.
-    if (this.#currentState === this.#States.IDLE) {
+    if (this.#state === this.#States.IDLE) {
       this.#changeStateImages = [
         this.#StateImages.IDLE,
         this.#StateImages.JUMPING
       ];
-    } else if (this.#currentState === this.#States.ROLLING_RIGHT 
-        || this.#currentState === this.#States.ROLLING_LEFT) {
+    } else if (this.#state === this.#States.ROLLING_RIGHT 
+        || this.#state === this.#States.ROLLING_LEFT) {
       this.#changeStateImages = [
         this.#StateImages.ROLLING,
         this.#StateImages.JUMPING
@@ -63,9 +68,9 @@ class Skater {
 
   rollRight() {
     // Already rolling right. Ignore.
-    if (this.#currentState === this.#States.ROLLING_RIGHT) return;
+    if (this.#state === this.#States.ROLLING_RIGHT) return;
 
-    if (this.#currentState === this.#States.ROLLING_LEFT) {
+    if (this.#state === this.#States.ROLLING_LEFT) {
       this.rollReverse();
       return;
     }
@@ -80,8 +85,8 @@ class Skater {
     ];
    
     this.#handleStateChange();
-
-    this.#currentState = this.#States.ROLLING_RIGHT;
+    this.#state = this.#States.ROLLING_RIGHT;
+    this.#scene.moveRight();
   }
 
   rollReverse() {
@@ -93,14 +98,16 @@ class Skater {
   
     this.#handleStateChange();
 
-    this.#currentState = this.#currentState === this.#States.ROLLING_RIGHT
+    this.#state = this.#state === this.#States.ROLLING_RIGHT
       ? this.#States.ROLLING_LEFT : this.#States.ROLLING_RIGHT;
+
+    this.#scene.moveReverse();
   }
   
   rollLeft() {
-    if (this.#currentState === this.#States.ROLLING_LEFT) return;
+    if (this.#state === this.#States.ROLLING_LEFT) return;
 
-    if (this.#currentState === this.#States.ROLLING_RIGHT) {
+    if (this.#state === this.#States.ROLLING_RIGHT) {
       this.rollReverse();
       return;
     }
@@ -114,8 +121,8 @@ class Skater {
     ];
    
     this.#handleStateChange();
-
-    this.#currentState = this.#States.ROLLING_LEFT;
+    this.#state = this.#States.ROLLING_LEFT;
+    this.#scene.moveLeft();
   }
 
   stop() {
@@ -125,8 +132,8 @@ class Skater {
     ];
    
     this.#handleStateChange();
-
-    this.#currentState = this.#States.IDLE
+    this.#state = this.#States.IDLE;
+    this.#scene.stop();
   }
   
   fall() {
@@ -137,7 +144,7 @@ class Skater {
    
     this.#handleStateChange();
 
-    this.#currentState = this.#States.IDLE;
+    this.#state = this.#States.IDLE;
   }
 
   isChanging() {
