@@ -3,7 +3,7 @@ class AboutScene {
   #speed = 3;
 
   #start = SCREEN.centerX;
-  #end = 1500;
+  #end = 4000;
 
   #layers = [
     this.#initLayer("mountains", 0.1, true),
@@ -20,7 +20,7 @@ class AboutScene {
       layer: getById(id),
       step: step, // px to move in parallax.
       left: 0, // Left position of the layer.
-      moveBackground: moveBackground
+      moveBackground: moveBackground,
     };
   }
 
@@ -49,8 +49,7 @@ class AboutScene {
       layer.left -= direction * layer.step * smoothFactor;
       if (layer.moveBackground)
         layer.layer.style.backgroundPositionX = layer.left + "px";
-      else
-        layer.layer.style.left = layer.left + "px";
+      else layer.layer.style.left = layer.left + "px";
     }
 
     return true;
