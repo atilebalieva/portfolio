@@ -1,3 +1,6 @@
+#projects-scene {
+  display: none;
+}
 #layer-0 {
   height: 100%;
   background: url(../images/projects/scene/layer-0.png) center/cover;

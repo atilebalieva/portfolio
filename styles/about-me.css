@@ -1,3 +1,7 @@
+#about-scene {
+  display: block;
+}
+
 #mountains {
   height: 83%;
   background: url(../images/about-me/mountains.png) center/cover;
@@ -34,6 +38,7 @@
 #about-billboards {
   height: 70%;
   bottom: 10%;
+  overflow: hidden;
 }
 
 #about-billboard-1 {
@@ -41,7 +46,13 @@
   background: url(../images/about-me/billboard-1/billboard.png) no-repeat;
   background-size: 27em;
 }
-
+#about-billboard-2 {
+  height: 100%;
+  background: url(../images/about-me/billboard-2/billboard2Aisal.png) no-repeat;
+  background-size: 40em;
+  bottom: -130px;
+  right: -209px;
+}
 #about-billboard-1-arrow {
   position: absolute;
   height: 52px;
