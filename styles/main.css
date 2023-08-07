@@ -6,10 +6,10 @@
   box-sizing: border-box;
 }
 body {
-  background: url(/images/general/tv-set-without-screen.png) no-repeat;
+  background: url(../images/general/tv-set-without-screen.png) no-repeat;
   background-size: auto 150%;
   background-position: 41% 17%;
-} 
+}
 /*     background: url(../images/workPlaceEnvelop.svg) 52% 0% / auto 131% no-repeat; 1)img position/size/reapeat */
 
 /* #projects-scene {
@@ -35,7 +35,6 @@ body {
   position: relative;
 }
 
-
 .projects_layers {
   position: absolute;
   left: -25.6%;
@@ -45,8 +44,7 @@ body {
   background-size: 100% auto;
 }
 
-
-@media screen and (max-width:1700px){
+@media screen and (max-width: 1700px) {
   .projects_layers {
     left: -19.6%;
   }
@@ -61,7 +59,6 @@ body {
   .projects_layers {
     left: -16.6%;
   }
-
 }
 
 @media only screen and (max-width: 1404px) and (min-height: 1000px) {
@@ -121,8 +118,7 @@ body {
   }
 }
 
-
-@media only screen and (max-width: 1440px){
+@media only screen and (max-width: 1440px) {
   .scene-container {
     max-height: 22em;
     max-width: 24.4em;
@@ -131,7 +127,6 @@ body {
   .projects_layers {
     left: -22.6%;
     top: 24%;
-
   }
 }
 
@@ -144,7 +139,8 @@ body {
 @media only screen and (max-width: 1130px) {
   .projects_layers {
     left: -14.6%;
-  }}
+  }
+}
 
 @media only screen and (max-width: 1080px) {
   .projects_layers {
@@ -190,9 +186,6 @@ body {
 .layer {
   width: 100%;
   position: absolute;
-}
-#about-scene {
-  display: block;
 }
 
 .skater {
