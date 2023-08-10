@@ -1,9 +1,17 @@
 class AboutScene {
   #center = SCREEN.centerX;
-  #speed = 3;
+  #speed = 1;
+  #animation = null;
 
   #start = SCREEN.centerX;
-  #end = 4000;
+  #end = 7200;
+  #animations = [
+    {
+      start: 700,
+      end: 1120,
+      image: getById("about-billboard-2-img"),
+    },
+  ];
 
   #layers = [
     this.#initLayer("mountains", 0.1, true),
@@ -37,12 +45,13 @@ class AboutScene {
     return true;
   }
 
-  // Returns true if the scene can move in a given direciton. Otherwise, false.
+  // Returns true if the scene can move in a given direction. Otherwise, false.
   // For example, reaching the end of scene.
   move(direction, smoothFactor) {
     if (!this.canMove(direction)) return false;
 
     this.#center += direction * this.#speed;
+    this.#handleAnimations(direction);
 
     // Move layers.
     for (const layer of this.#layers) {
@@ -53,5 +62,46 @@ class AboutScene {
     }
 
     return true;
+  }
+
+  // Handles showing or hiding of animations on the billboards.
+  #handleAnimations(direction) {
+    if (this.#animation !== null) {
+      // There is the current animation. "Unmark" the current animation when the scene goes out of the current animation,
+      // so the scene can properly handle animation again when comes back.
+      if (
+        (direction === 1 && this.#animation.end < this.#center) ||
+        (direction === -1 && this.#animation.start > this.#center)
+      ) {
+        this.#handleImage(false);
+        this.#animation = null;
+      }
+    } else {
+      // No current animation. Start animation if get within any of animations.
+      const animation = this.#getAnimation();
+      if (animation !== null) {
+        this.#animation = animation;
+        this.#handleImage(true);
+      }
+    }
+  }
+
+  #getAnimation() {
+    for (let i = 0; i < this.#animations.length; i++) {
+      const animation = this.#animations[i];
+      if (this.#center >= animation.start && this.#center <= animation.end) {
+        return animation;
+      }
+    }
+
+    // Not within any of animations.
+    return null;
+  }
+
+  #handleImage(useGif) {
+    const image = this.#animation.image;
+    image.src = useGif
+      ? image.src.replace(".png", ".gif")
+      : image.src.replace(".gif", ".png");
   }
 }
