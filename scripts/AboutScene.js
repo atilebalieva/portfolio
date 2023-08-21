@@ -4,7 +4,7 @@ class AboutScene {
   #animation = null;
 
   #start = SCREEN.centerX;
-  #end = 7200;
+  #end = 3430;
   #animations = [
     {
       start: 700,
@@ -39,9 +39,10 @@ class AboutScene {
       (direction === -1 && this.#center < this.#start)
     ) {
       // Reached the end or the start of the scene.
+
       return false;
     }
-
+    console.log(this.#center);
     return true;
   }
 
