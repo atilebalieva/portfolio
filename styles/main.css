@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background: url(../images/general/background-1.png);
   background-size: contain;
