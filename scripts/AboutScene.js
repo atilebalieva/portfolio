@@ -1,4 +1,5 @@
 class AboutScene {
+  #sceneSection = getById("about-scene");
   #center = SCREEN.centerX;
   #speed = 1;
   #animation = null;
@@ -42,15 +43,6 @@ class AboutScene {
     this.#initLayer("about-road", 1, false),
     this.#initLayer("grass", 2, true),
   ];
-  // #layers = [
-  //   this.#initLayer("mountains", 1, true),
-  //   this.#initLayer("city-panorama", 2, true),
-  //   this.#initLayer("front-city", 3, true),
-  //   this.#initLayer("about-billboards", 4, false),
-  //   this.#initLayer("park", 4, true),
-  //   this.#initLayer("about-road", 5, false),
-  //   this.#initLayer("grass", 6, true),
-  // ];
 
   #initLayer(id, step, moveBackground) {
     return {
@@ -59,6 +51,10 @@ class AboutScene {
       left: 0, // Left position of the layer.
       moveBackground: moveBackground,
     };
+  }
+
+  show(visible) {
+    this.#sceneSection.style.display = visible ? "block" : "none";
   }
 
   // Returns true if the scene can move in a given direction.
@@ -86,7 +82,6 @@ class AboutScene {
     // Move layers.
     for (const layer of this.#layers) {
       layer.left -= direction * layer.step * smoothFactor;
-      //layer.left -= direction * layer.step;
       if (layer.moveBackground) {
         layer.layer.style.backgroundPositionX = layer.left + "px";
       } else {
