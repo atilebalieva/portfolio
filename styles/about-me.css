@@ -1,20 +1,26 @@
+#about-scene {
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+
 #mountains {
-  height: 97%;
+  height: 100%;
   background: url(../images/about-me/mountains.png) center/cover;
 }
 
 #city-panorama {
-  height: 48%;
+  height: 47%;
   background: url(../images/about-me/city-panorama.png) repeat-x;
-  background-size: 56em;
-  bottom: 12%;
+  background-size: 62em;
+  bottom: 8%;
 }
 
 #front-city {
   height: 29%;
   background: url(../images/about-me/greenroadCity.png) repeat-x;
-  background-size: 52em;
-  bottom: 12%;
+  background-size: 58em;
+  bottom: 7%;
 }
 
 #park {
@@ -22,21 +28,18 @@
   background: url(../images/about-me/front-road-elements.png) repeat-x;
   background-size: 40em;
   height: 42%;
-  background: url(../images/about-me/frontroad.png) repeat-x;
-  background-size: 42em;
-  bottom: 0%;
 }
 
 #grass {
-  height: 10%;
+  height: 5%;
   background: url(../images/about-me/grass.png) repeat-x;
   background-size: 40em;
   bottom: 0%;
 }
 
 #about-billboards {
-  height: 51%;
-  bottom: 10%;
+  height: 49%;
+  bottom: 3%;
 }
 
 #about-billboard-1 {
@@ -115,4 +118,23 @@
   height: 22%;
   bottom: 67%;
   left: 19%;
+}
+
+#about-road {
+  height: 30%;
+  bottom: 0%;
+}
+
+#about-road-cones {
+  position: absolute;
+  height: 36%;
+  bottom: 12%;
+  left: 28%;
+}
+
+#about-road-closed {
+  position: absolute;
+  height: 68%;
+  bottom: 22%;
+  left: 337%;
 }
