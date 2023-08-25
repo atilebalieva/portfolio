@@ -65,6 +65,24 @@ body {
   transform: translate(-50%, 0%) rotateY(180deg);
 }
 
+.road-elements {
+  height: 30%;
+  bottom: 2%;
+}
+.road-cones {
+  position: absolute;
+  height: 36%;
+  bottom: 12%;
+  left: 28%;
+}
+
+.road-closed {
+  position: absolute;
+  height: 68%;
+  bottom: 22%;
+  left: 337%;
+}
+
 @media (orientation: landscape) {
   #layer-1,
   #layer-2,

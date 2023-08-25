@@ -4,69 +4,81 @@
 #layer-0 {
   height: 100%;
   background: url(../images/projects/scene/layer-0.png) center/cover;
-  border-radius: 10px;
 }
 
 #layer-1 {
-  height: 25%;
+  height: 100%;
+  max-height: 25%;
   background: url(../images/projects/scene/layer-1.png) repeat-x;
-  background-size: 48em;
+  background-size: contain;
   bottom: 2%;
-  border-radius: 10px;
 }
 
 #layer-2 {
-  height: 35%;
+  max-height: 18%;
+  height: 100%;
   background: url(../images/projects/scene/layer-2.png) repeat-x;
-  background-size: 48em;
-  bottom: 2%;
-  border-radius: 10px;
+  background-size: contain;
+  bottom: 8%;
 }
 
 #layer-3 {
-  height: 35%;
+  max-height: 22%;
+  height: 100%;
   background: url(../images/projects/scene/layer-3.png) repeat-x;
-  background-size: 45em;
+  background-size: contain;
   bottom: 8%;
-  border-radius: 10px;
 }
 
 #layer-4 {
-  height: 20%;
+  height: 100%;
+  max-height: 22%;
   background: url(../images/projects/scene/layer-4.png) repeat-x;
-  background-size: 46em;
+  background-size: contain;
   bottom: 3%;
-  border-radius: 10px;
 }
 
 #layer-5 {
-  height: 50%;
+  height: 100%;
+  max-height: 40%;
   background: url(../images/projects/scene/layer-5.png) repeat-x;
-  background-size: 40em;
+  background-size: contain;
   bottom: 5%;
-  border-radius: 10px;
 }
 
 #layer-6 {
-  height: 37%;
+  height: 100%;
+  max-height: 36%;
   background: url(../images/projects/scene/layer-6.png) repeat-x;
-  background-size: 46em;
+  background-size: contain;
   bottom: 0%;
-  border-radius: 10px;
+}
+
+#project-road-cones {
+  bottom: 6%;
+}
+#project-road-closed {
+  left: 1500px;
 }
 
 #layer-8 {
-  height: 5%;
+  max-height: 7%;
+  height: 100%;
   background: url(../images/projects/scene/layer-8.png) repeat-x;
-  background-size: 20em;
+  background-size: contain;
   bottom: 0%;
-  border-radius: 10px;
 }
 
 #layer-9 {
   height: 100%;
+  max-height: 100%;
   top: 0;
   left: 0;
   background: url(../images/projects/scene/layer-9.png);
-  border-radius: 10px;
+}
+
+@media screen and (max-width: 400px) {
+  .scene-container {
+    min-width: 21em;
+  }
 }
