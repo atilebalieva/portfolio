@@ -80,12 +80,12 @@ class AboutScene {
     this.#handleAnimations(direction);
 
     // Move layers.
-    for (const layerObj of this.#layers) {
-      layerObj.left -= direction * layerObj.step * smoothFactor;
-      if (layerObj.moveBackground) {
-        layerObj.layer.style.backgroundPositionX = layerObj.left + "px";
+    for (const layer of this.#layers) {
+      layer.left -= direction * layer.step * smoothFactor;
+      if (layer.moveBackground) {
+        layer.layer.style.backgroundPositionX = layer.left + "px";
       } else {
-        layerObj.layer.style.left = layerObj.left + "px";
+        layer.layer.style.left = layer.left + "px";
       }
     }
 
