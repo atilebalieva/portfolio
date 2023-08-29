@@ -1,0 +1,126 @@
+#projects-scene {
+  display: none;
+}
+
+#projects-sky {
+  height: 100%;
+  background: url(../images/projects/scene/layer-0.png) center/cover;
+}
+
+#projects-mountains {
+  height: 100%;
+  max-height: 25%;
+  background: url(../images/projects/scene/layer-1.png) repeat-x;
+  background-size: contain;
+  bottom: 2%;
+}
+
+#projects-trees-far {
+  max-height: 18%;
+  height: 100%;
+  background: url(../images/projects/scene/layer-2.png) repeat-x;
+  background-size: contain;
+  bottom: 8%;
+}
+
+#projects-trees-middle {
+  max-height: 22%;
+  height: 100%;
+  background: url(../images/projects/scene/layer-3.png) repeat-x;
+  background-size: contain;
+  bottom: 8%;
+}
+
+#projects-bushes {
+  height: 100%;
+  max-height: 22%;
+  background: url(../images/projects/scene/layer-4.png) repeat-x;
+  background-size: contain;
+  bottom: 3%;
+}
+
+#projects-cable-lines {
+  height: 100%;
+  max-height: 40%;
+  background: url(../images/projects/scene/layer-5.png) repeat-x;
+  background-size: contain;
+  bottom: 5%;
+}
+
+#projects-trees-near {
+  position: absolute;
+  width: 104%;
+  height: 100%;
+  max-height: 36%;
+  background: url(../images/projects/scene/layer-6.png) repeat-x;
+  background-size: contain;
+  bottom: 0%;
+}
+
+#project-road-cones {
+  bottom: 13%;
+  left: 40%;
+}
+
+#project-road-closed {
+  left: 430%;
+}
+
+#projects-grasses {
+  max-height: 7%;
+  height: 100%;
+  background: url(../images/projects/scene/layer-8.png) repeat-x;
+  background-size: contain;
+  bottom: 0%;
+}
+
+#projects-sky-shadow {
+  height: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+  background: url(../images/projects/scene/layer-9.png);
+}
+
+#projects-billboards {
+  height: 51%;
+  bottom: 12.5%;
+}
+
+.projects-billboard {
+  height: 100%;
+  background: url(../images/projects/scene/billboard.png) no-repeat;
+  background-size: 18em;
+  top: 1em;
+}
+
+#projects-billboard-1 {
+  left: 70%;
+}
+
+#projects-billboard-1-tetris,
+#projects-billboard-2-tetris,
+#projects-billboard-3-tetris,
+#projects-billboard-4-tetris,
+#projects-billboard-5-tetris {
+  position: absolute;
+  height: 50.5%;
+  bottom: 42%;
+  left: 1%;
+}
+
+#projects-billboard-2 {
+  left: 150%;
+}
+
+#projects-billboard-3 {
+  left: 230%;
+}
+
+#projects-billboard-4 {
+  left: 300%;
+}
+
+#projects-billboard-5 {
+  left: 370%;
+}
