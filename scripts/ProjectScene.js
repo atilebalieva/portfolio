@@ -18,22 +18,20 @@ class ProjectsScene {
   ];
 
   #layers = [
-    this.#initLayer("layer-1", 1, true),
-    this.#initLayer("layer-2", 1.1, true),
-    this.#initLayer("layer-3", 1.25, true),
-    this.#initLayer("layer-4", 1.5, true),
-    this.#initLayer("layer-5", 2, true),
-    this.#initLayer("layer-6", 3, true),
-    this.#initLayer("projects-road", 3, false),
-    this.#initLayer("layer-8", 5, true),
+    this.#initLayer("layer-1", 1),
+    this.#initLayer("layer-2", 1.1),
+    this.#initLayer("layer-3", 1.25),
+    this.#initLayer("layer-4", 1.5),
+    this.#initLayer("layer-5", 2),
+    this.#initLayer("layer-6", 3),
+    this.#initLayer("layer-8", 5),
   ];
 
-  #initLayer(id, step, moveBackground) {
+  #initLayer(id, step) {
     return {
       layer: getById(id),
       step: step, // px to move in parallax.
       left: 0, // Left position of the layer.
-      moveBackground: moveBackground,
     };
   }
 
@@ -58,18 +56,13 @@ class ProjectsScene {
   // For example, reaching the end of scene.
   move(direction, smoothFactor) {
     if (!this.canMove(direction) || !this.#handleStops(direction)) return false;
-    console.log(this.#center);
+
     this.#center += direction * this.#speed;
 
     // Move layers.
-    for (const layerObj of this.#layers) {
-      layerObj.left -= direction * layerObj.step * smoothFactor;
-      if (layerObj.moveBackground) {
-        // moveBackground property defines layer(div) has background-image or not. If it has, layer's background-position changes, if it has not layer move itself with position.
-        layerObj.layer.style.backgroundPositionX = layerObj.left + "px";
-      } else {
-        layerObj.layer.style.left = layerObj.left + "px";
-      }
+    for (const layer of this.#layers) {
+      layer.left -= direction * layer.step * smoothFactor;
+      layer.layer.style.backgroundPositionX = layer.left + "px";
     }
 
     return true;
