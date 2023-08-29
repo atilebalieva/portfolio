@@ -1,12 +1,12 @@
-@media screen and (max-height: 950px) {
+/* @media screen and (max-height: 950px) {
    .scene-container{
       max-height: 53em;
       top: 7%;
       left: 17%;
    }
- }
+ } */
 
-@media screen and (max-height: 830px) {
+/* @media screen and (max-height: 830px) {
    .scene-container{
      max-height: 43em;
      left: 14%;
@@ -47,9 +47,9 @@
  .skater {
    bottom: 6%;
  }
-}
+} */
 
-@media screen and (max-height: 740px) {
+/* @media screen and (max-height: 740px) {
    .scene-container {
       max-height: 40em;
    }
@@ -71,9 +71,9 @@
    .skater {
       bottom: 2%;
    }
-}
+} */
 
-@media screen and (max-height: 705px) {
+/* @media screen and (max-height: 705px) {
    .scene-container {
       max-height: 38em;
       max-width: 62.8em;
@@ -116,7 +116,7 @@
 .skater {
    bottom: 4%;
 }
-}
+} */
 /* 
  @media screen and (max-height: 750px) {
    .scene-container{
@@ -168,3 +168,29 @@
    left: 22%;
 }
  } */
+
+/* for mobile */
+@media screen and (min-width: 1500px) {
+
+ .tv-set {
+      background-size: 100% 100%; 
+   }
+
+}
+
+@media screen and (max-width: 1200px) {
+   .tv-set {
+      background-size: 100% 100%; 
+   }
+}
+
+ @media (min-width: 280px) and (max-width: 480px) {
+   .container {
+      padding: 0 15px;
+    }
+
+    .scene-container {
+      top: 0%;
+      left: 0%;
+    }
+ }
