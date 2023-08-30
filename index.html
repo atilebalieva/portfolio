@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./styles/about-me.css" />
   <link rel="stylesheet" href="./styles/projects.css" />
   <link rel="stylesheet" href="./styles/normalize.css" />
-  <link rel="stylesheet" href="./styles/media.css">
+  <link rel="stylesheet" href="./styles/media.css" />
   <!-- fontawesome link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -21,16 +21,25 @@
   <div class="container" id="container">
     <!-- Burger Menu -->
     <header>
-      <div class="made-with-love">Made with<span class="heart"> &#10084; </span>by Aisal</div>
+      <div class="made-with-love">
+        Made with<span class="heart"> &#10084; </span>by Aisal
+      </div>
       <div class="burger-menu">
         <i class="fas fa-bars burger"></i>
         <nav class="menu">
           <ul>
-            <li><a href="#"><img src="images/burger-menu-icons/account.gif" width="24px" alt="about me icon">About
-                me</a></li>
-            <li><a href="#"> <img src="images/burger-menu-icons/folder.gif" width="24px"
-                  alt="projects icon">Projects</a></li>
-            <li><a href="#"><img src="images/burger-menu-icons/article.gif" width="24px" alt="cv icon"> Resume</a></li>
+            <li>
+              <a href="#"><img src="images/burger-menu-icons/account.gif" width="24px" alt="about me icon" />About
+                me</a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/burger-menu-icons/folder.gif" width="24px" alt="projects icon" />Projects</a>
+            </li>
+            <li>
+              <a href="#"><img src="images/burger-menu-icons/article.gif" width="24px" alt="cv icon" />
+                Resume</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -79,21 +88,21 @@
             <img src="./images/projects/billboards-content/tetris.png" id="projects-billboard-1-tetris"
               class="projects-billboards-content" alt="tetris" />
           </div>
-          <div id="projects-billboard-2" class=" projects-billboards-styles layer">
+          <div id="projects-billboard-2" class="projects-billboards-styles layer">
             <img src="./images/projects/billboards-content/tetris.png" id="projects-billboard-2-tetris"
               class="projects-billboards-content" alt="tetris" />
           </div>
-          <div id="projects-billboard-3" class=" projects-billboards-styles layer">
+          <div id="projects-billboard-3" class="projects-billboards-styles layer">
             <img src="./images/projects/billboards-content/tetris.png" id="projects-billboard-3-tetris"
-              class="projects-billboards-content" alt="tetris">
+              class="projects-billboards-content" alt="tetris" />
           </div>
           <div id="projects-billboard-4" class="projects-billboards-styles layer">
             <img src="./images/projects/billboards-content/tetris.png" id="projects-billboard-4-tetris"
-              class="projects-billboards-content" alt="tetris">
+              class="projects-billboards-content" alt="tetris" />
           </div>
           <div id="projects-billboard-5" class="projects-billboards-styles layer">
             <img src="./images/projects/billboards-content/tetris.png" id="projects-billboard-5-tetris"
-              class="projects-billboards-content" alt="tetris">
+              class="projects-billboards-content" alt="tetris" />
           </div>
         </div>
         <div id="projects-road" class="road-elements layer">
@@ -104,13 +113,14 @@
         <div id="projects-sky-shadow" class="layer"></div>
         <img id="projects-skater" class="skater" src="images/skater/idle.gif" />
         <div id="overlay-modal"></div>
-
       </section>
+      <div id="white-noise"></div>
       <div class="switch-btns">
         <button class="btn-about btn-scene" id="btn-about">About me</button>
-        <button class="btn-projects btn-scene" id="btn-projects">Projects</button>
+        <button class="btn-projects btn-scene" id="btn-projects">
+          Projects
+        </button>
       </div>
-
       <div id="overlay-billboard"></div>
       <div class="modal">
         <div class="modal-content">
@@ -157,13 +167,14 @@
           </div>
         </div>
       </div>
-
-    </div> <!-- tv-set -->
-    <div class="tv-stand">
-      <img src="images/general/clock.png" alt="clock" class="clock">
-      <img src="images/general/radio.png" alt="radio" class="radio">
     </div>
-  </div> <!-- container-->
+    <!-- tv-set -->
+    <div class="tv-stand">
+      <img src="images/general/clock.png" alt="clock" class="clock" />
+      <img src="images/general/radio.png" alt="radio" class="radio" />
+    </div>
+  </div>
+  <!-- container-->
   <script src="./scripts/hammer.js"></script>
   <script src="./scripts/globals.js"></script>
   <script src="./scripts/Screen.js"></script>
