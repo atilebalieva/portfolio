@@ -8,28 +8,28 @@ class ProjectsScene {
   #end = 3880;
   #stops = [
     {
-      start: 685,
-      end: 778,
-      image: getById("projects-billboard-1-tetris"),
+      start: 730,
+      end: 760,
+      image: getById("projects-b1-imgTetris"),
     },
     {
-      start: 1425,
-      end: 1527,
+      start: 1480,
+      end: 1510,
       image: getById("projects-billboard-2-tetris"),
     },
     {
-      start: 2180,
-      end: 2276,
+      start: 2225,
+      end: 2255,
       image: getById("projects-billboard-3-tetris"),
     },
     {
-      start: 2835,
-      end: 2930,
+      start: 2880,
+      end: 2910,
       image: getById("projects-billboard-4-tetris"),
     },
     {
-      start: 3488,
-      end: 3578,
+      start: 3533,
+      end: 3563,
       image: getById("projects-billboard-5-tetris"),
     },
   ];
@@ -128,11 +128,12 @@ class ProjectsScene {
     // Not within any of stops.
     return null;
   }
-  
+
   #handleImage(useGif) {
     const image = this.#currentStop.image;
     image.src = useGif
       ? image.src.replace(".png", ".gif")
       : image.src.replace(".gif", ".png");
+    overlayBillboard.style.display = useGif ? "block" : "none";
   }
 }

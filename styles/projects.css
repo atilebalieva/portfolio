@@ -86,29 +86,36 @@
 
 #projects-billboards {
   height: 51%;
-  bottom: 12.5%;
+  bottom: 8.5%;
 }
 
 .projects-billboard {
   height: 100%;
-  background: url(../images/projects/scene/billboard.png) no-repeat;
-  background-size: 18em;
-  top: 1em;
+  background: url(../images/projects/billboard.png) no-repeat;
+  background-size: 16em;
+  top: 1.5em;
 }
 
 #projects-billboard-1 {
   left: 70%;
 }
-
-#projects-billboard-1-tetris,
+#overlay-billboard {
+  position: absolute;
+  top: 43%;
+  left: 29%;
+  width: 283px;
+  height: 218px;
+  display: none;
+}
+#projects-b1-imgTetris,
 #projects-billboard-2-tetris,
 #projects-billboard-3-tetris,
 #projects-billboard-4-tetris,
 #projects-billboard-5-tetris {
   position: absolute;
-  height: 50.5%;
-  bottom: 42%;
-  left: 1%;
+  height: 46%;
+  bottom: 47%;
+  left: 0.8%;
 }
 
 #projects-billboard-2 {
@@ -125,4 +132,108 @@
 
 #projects-billboard-5 {
   left: 370%;
+}
+
+.modal {
+  position: absolute;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+#overlay-modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+#overlay-modal.changeBackground {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-content {
+  position: absolute;
+  top: 23%;
+  left: 21%;
+}
+
+.modalImgTetris img {
+  width: 100%;
+  max-width: 25em;
+  height: auto;
+}
+
+.modalImgTetris {
+  position: relative;
+  display: none;
+}
+
+.modalImgTetris.current {
+  display: block;
+}
+
+.close,
+.btn-prev,
+.btn-next {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 1.7em;
+  color: #fff;
+  font-weight: bold;
+  z-index: 10000;
+  padding: 0.5em;
+}
+
+.close {
+  top: -14%;
+  right: -10%;
+  font-size: 1.4em;
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-next {
+  top: 42%;
+  right: -29%;
+}
+.btn-prev {
+  left: -34%;
+  top: 42%;
+}
+
+.link-tetris {
+  position: absolute;
+  bottom: -12%;
+  font-size: 1em;
+  color: #fff;
+  padding: 0.4em 1em;
+  background-color: #1e1e1e;
+  text-decoration: none;
+  border-radius: 0.3em;
+}
+.link-demo {
+  right: 52%;
+}
+.link-github {
+  left: 54%;
+}
+
+.modal.show .modal-content {
+  animation: zoom 0.5s ease-in-out;
+}
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
 }
