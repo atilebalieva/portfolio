@@ -1,4 +1,8 @@
-@media (min-height: 940px) and (min-width: 1300px) {
+@media (min-height: 940px) and (min-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
+
   .container {
     overflow: visible;
   }
@@ -6,32 +10,9 @@
   .tv-stand {
     display: block;
   }
-}
 
+}
 /* bylo (min-height: 980px)*/
-
-/* we need to finish it (banners gif images)
-
-@media screen and (max-height: 900px) {
-  #about-billboard-1-arrow {
-    left: 14%;
-}
-
-#about-billboard-3-girl {
-  height: 22%;
-  left: 32%;
-}
-
-#about-billboard-4-balloon {
-  left: 28%;
-}
-
-#about-billboard-5-butterfly {
-  left: 24%;
-}
-
-
-} */ 
 
 /* desktop  */
 @media (max-height: 880px) and (min-width: 1400px) {
@@ -40,6 +21,7 @@
   }
 
   .scene-container {
+    height: 84%;
     left: 8%;
   }
 
@@ -69,6 +51,10 @@
   #white-noise {
     left: 15%;
 }
+
+#front-city {
+  max-height: 36%;
+}
 }
 
 @media (max-height: 815px) and (min-width: 1301px) {
@@ -79,6 +65,12 @@
   .scene-container {
     left: 13%;
   }
+
+  .menu-style {
+    width: 9%;
+    right: 18%;
+}
+
 }
 
 @media (max-height: 780px) and (min-width: 1301px) {
@@ -88,7 +80,23 @@
 
   .scene-container {
     max-width: 755px;
+    height: 84%;
     left: 17%;
+}
+
+#about-me-btn {
+  top: 19%;
+}
+
+#resume-btn {
+  top: 30.5%;
+}
+
+
+.menu-style {
+  width: 7%;
+  height: 32px;
+  right: 20%;
 }
 
 }
@@ -140,8 +148,17 @@ body {
   bottom: 0%;
 }
 
+#about-billboards {
+  max-height: 72%;
+  bottom: -21%;
+}
+
 #about-billboard-1-arrow {
   left: 13%;
+}
+
+#about-billboard-2 {
+  left: 90%;
 }
 
 #about-billboard-2-girl {
@@ -149,7 +166,7 @@ body {
 }
 
 #about-billboard-3 {
-  left: 155%;
+  left: 200%;
 }
 
 #about-billboard-3-girl {
@@ -157,7 +174,7 @@ body {
 }
 
 #about-billboard-4 {
-  left: 250%;
+  left: 300%;
 }
 
 #about-billboard-4-balloon {
@@ -165,13 +182,16 @@ body {
 }
 
 #about-billboard-5 {
-  left: 338%;
+  left: 390%;
 }
 
 #about-billboard-5-butterfly {
   left: 22%;
 }
 
+.menu-style {
+  display: none;
+}
 
 .skater {
   width: 16em;
@@ -181,6 +201,87 @@ body {
 }
 
 /* tablet portrait*/
+/* big tablets */
+@media only screen and (min-height: 1200px) and (max-width: 1300px){
+  body {
+    background: none;
+  }
+
+  .container {
+    max-height: 1400px;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+  
+  .menu {
+    display: none;
+  }
+  
+  .burger-menu.open .menu {
+    display: block;
+  }
+  
+  .made-with-love {
+    display: block;
+  }
+
+  .tv-set {
+    background: none;
+   }
+
+  .scene-container {
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    top: 0%;
+    left: 0%;
+  }
+
+  #city-panorama {
+    top: 46%;
+  }
+
+  #front-city {
+    max-height: 29%;
+  }
+
+  #park {
+    max-height: 46%;
+  }
+
+  #about-billboard-2 {
+    left: 80%;
+  }
+
+  #about-billboard-3 {
+    left: 197%;
+  }
+
+  #about-billboard-4 {
+    left: 299%;
+  }
+
+  #about-billboard-5 {
+    left: 409%;
+  }
+
+  #grass {
+    bottom: 0%;
+  }
+
+  .skater {
+    width: 23em;
+    height: 20em;
+  }
+
+  .tv-stand {
+    display: none;
+  }
+
+}
+
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1200px) 
