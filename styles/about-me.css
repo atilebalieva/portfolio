@@ -46,58 +46,41 @@
 #about-billboards {
   height: 100%;
   max-height: 66%;
+  width: 100%;
   position: relative;
   bottom: -26%;
 }
 
-#about-billboard-1 {
+.img-set {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
   position: absolute;
-  left: 33%;
-  bottom: -1%;
 }
 
 #about-billboard-1-arrow {
-  width: 55%;
-  object-fit: contain;
-}
-
-#about-billboard-2 {
-  left: 80%;
-  bottom: -1%;
+  left: -2%;
 }
 
 #about-billboard-2-girl {
-  width: 80%;
-  object-fit: contain;
+  width: 84%;
+  left: 90%;
+  bottom: -7%;
 }
 
-#about-billboard-3 {
+#about-billboard-3-girl {
   left: 180%;
   bottom: -3%;
 }
 
-#about-billboard-3-girl {
-  width: 53%;
-  object-fit: contain;
-}
-
-#about-billboard-4 {
-  left: 250%;
+#about-billboard-4-balloon {
+  left: 268%;
   bottom: -3%;
 }
 
-#about-billboard-4-balloon {
-  width: 53%;
-  object-fit: contain;
-}
-
-#about-billboard-5 {
-  left: 320%;
-  bottom: 0%;
-}
-
 #about-billboard-5-butterfly {
-  width: 35%;
+  left: 343%;
+  bottom: 0%;
 }
 
 #about-road {
@@ -118,7 +101,7 @@
 .road-closed {
   position: absolute;
   height: 69%;
-  left: 440%;
+  left: 511%;
   bottom: 17%;
 }
 
