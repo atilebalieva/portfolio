@@ -2,22 +2,21 @@ class ProjectsScene {
   #sceneSection = getById("projects-scene");
   #stops = [
     {
-      image: getById("projects-billboard-1-tetris"),
+      image: getById("tetris"),
     },
     {
-      image: getById("projects-billboard-2-tetris"),
+      image: getById("proassess"),
     },
     {
-      image: getById("projects-billboard-3-tetris"),
+      image: getById("selectiq"),
     },
     {
-      image: getById("projects-billboard-4-tetris"),
+      image: getById("research"),
     },
     {
-      image: getById("projects-billboard-5-tetris"),
+      image: getById("gamefolio"),
     },
   ];
-
   #currentStop = null;
   #skaterImg = getById("projects-skater");
 
@@ -50,8 +49,8 @@ class ProjectsScene {
   // Returns true if the scene can move in a given direction.
   canMove(direction) {
     const skater = this.#skaterImg.getBoundingClientRect();
-    const roadEnd =
-      getById("projects-road-closed").getBoundingClientRect().left + 50;
+    const roadEnd = getById("projects-road-closed").getBoundingClientRect()
+      .left;
     const roadStart = getById("projects-road-cones").getBoundingClientRect()
       .right;
 
@@ -96,7 +95,7 @@ class ProjectsScene {
         (direction === 1 && billboard.right < skater.right) ||
         (direction === -1 && billboard.left > skater.left)
       ) {
-        this.#handleImage(false);
+        this.#handleImage();
         this.#currentStop = null;
       }
     } else {
@@ -104,7 +103,7 @@ class ProjectsScene {
       const stop = this.#getStop();
       if (stop !== null) {
         this.#currentStop = stop;
-        this.#handleImage(true);
+        this.#handleImage();
         return false;
       }
     }
@@ -117,7 +116,11 @@ class ProjectsScene {
     for (let i = 0; i < this.#stops.length; i++) {
       const stop = this.#stops[i];
       const billboard = stop.image.getBoundingClientRect();
-      if (skater.left >= billboard.left && skater.right <= billboard.right) {
+      const padding = billboard.width * 0.24; //Padding variable helps to show interval where skater should stop(center of billboard) on defferent screens.
+      if (
+        skater.left >= billboard.left + padding &&
+        skater.right <= billboard.right - padding
+      ) {
         return stop;
       }
     }
@@ -126,11 +129,12 @@ class ProjectsScene {
     return null;
   }
 
-  #handleImage(useGif) {
-    const image = this.#currentStop.image;
-    image.src = useGif
-      ? image.src.replace(".png", ".gif")
-      : image.src.replace(".gif", ".png");
-    overlayBillboard.style.display = useGif ? "block" : "none";
+  #handleImage() {
+    const isMobile = getComputedStyle(tv).backgroundImage === "none";
+    overlayBillboard.style.display = isMobile ? "none" : "block";
+  }
+
+  getStopId() {
+    return this.#currentStop.image.id;
   }
 }

@@ -1,7 +1,6 @@
 class TouchHandler {
   constructor() {
     const container = getById("container");
-    const overlayBillboard = getById("overlay-billboard");
     const hammerContainer = new Hammer(container);
     const hammerBillboard = new Hammer(overlayBillboard);
 
@@ -24,7 +23,6 @@ class TouchHandler {
     });
 
     hammerBillboard.on("tap", function () {
-      console.log("modal");
       showModalBox();
     });
   }
