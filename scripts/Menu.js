@@ -15,8 +15,11 @@ class Menu {
     });
 
     getById("resume-btn").addEventListener("click", () => {
+      this.#showWhiteNoise();
+      this.showResumeScene();
       document.querySelector(".switch-buttons").style.backgroundImage =
         "url(images/general/menu-resume.png)";
+      document.getElementById("overlay-resume").style.display = "block";
     });
   }
 
@@ -24,6 +27,7 @@ class Menu {
     SCENE_WRAPPER.down();
     ABOUT_SCENE.show(true);
     PROJECTS_SCENE.show(false);
+    RESUME_SCENE.show(false);
     SKATER.setImage("about-skater");
     CURRENT_SCENE = ABOUT_SCENE;
   }
@@ -32,8 +36,16 @@ class Menu {
     SCENE_WRAPPER.down();
     ABOUT_SCENE.show(false);
     PROJECTS_SCENE.show(true);
+    RESUME_SCENE.show(false);
     SKATER.setImage("projects-skater");
     CURRENT_SCENE = PROJECTS_SCENE;
+  }
+
+  showResumeScene() {
+    ABOUT_SCENE.show(false);
+    PROJECTS_SCENE.show(false);
+    RESUME_SCENE.show(true);
+    CURRENT_SCENE = RESUME_SCENE;
   }
 
   #showWhiteNoise() {
