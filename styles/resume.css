@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Playball&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Playball&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=swap");
 
 #resume-scene {
   position: relative;
-  z-index: -2; 
-  background-color:#485369;
-  font-family: 'Playball', cursive;
+  z-index: -2;
+  background-color: #485369;
+  font-family: "Playball", cursive;
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -15,14 +15,14 @@
   position: relative;
   height: 17%;
   width: 100%;
-  background:url(../images/resume/top-blue-bg.png) no-repeat center;
+  background: url(../images/resume/top-blue-bg.png) no-repeat center;
   background-position: 50% 60%;
   background-size: 100% 100%;
   margin-bottom: 50px;
   z-index: 1;
 }
 
-.resume-header  img {
+.resume-header img {
   width: 160px;
   margin: 15px auto 0 auto;
   display: block;
@@ -31,14 +31,14 @@
 .middle {
   width: 100%;
   height: 60%;
-  background-color:#485369;
+  background-color: #485369;
 }
 
 .middle_style {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0 50px; 
+  gap: 0 50px;
   flex-wrap: wrap;
 }
 
@@ -54,7 +54,7 @@
 .location {
   justify-content: center;
   align-items: center;
-  font-family: 'Playball', cursive;
+  font-family: "Playball", cursive;
   font-weight: 700;
   font-size: 1.5rem;
 }
@@ -66,7 +66,7 @@
 
 figure {
   display: flex;
-  gap:0.4rem;
+  gap: 0.4rem;
   padding: 0.5rem 1rem 0.3rem 0;
   justify-content: left;
   align-items: center;
@@ -74,7 +74,7 @@ figure {
 
 figure a {
   text-decoration: none;
-  font-family: 'Playball', cursive;
+  font-family: "Playball", cursive;
   color: black;
 }
 
@@ -90,7 +90,7 @@ figure a {
   background-position: center center;
   background-size: 101% 103%;
   width: 35%;
-  padding: 60px 40px 40px 40px;
+  padding: 60px 40px 63px 40px;
 }
 
 .resume-skills {
@@ -98,18 +98,18 @@ figure a {
   transform: rotate(-20deg);
 }
 
-.resume-skills:first-child{
+.resume-skills:first-child {
   padding: 50px 0 0 30px;
 }
 
 .resume-skills-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 0 20px;
+  gap: 3px 20px;
   justify-content: space-between;
 }
 
-.resume-skills-content li{
+.resume-skills-content li {
   width: 18%;
   list-style: none;
 }
@@ -120,7 +120,7 @@ figure a {
   transform: rotate(-4deg);
 }
 
-.resume-experience-content{
+.resume-experience-content {
   list-style: none;
 }
 
@@ -138,14 +138,14 @@ figure a {
   animation: shaking 1s ease-in;
 }
 
-.footer{
+.footer {
   width: 100%;
   height: 4rem;
   gap: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Playball', cursive;
+  font-family: "Playball", cursive;
   background: url(../images/resume/top-blue-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -154,24 +154,33 @@ figure a {
   z-index: 1;
 }
 
-.footer span{
-    font-size: 0.7rem;
+.footer span {
+  font-size: 0.7rem;
 }
 
-.footer img{
-    width: 30px;
-    cursor: pointer;
+.footer img {
+  width: 30px;
+  cursor: pointer;
 }
 
 /* shaking animation  */
 @keyframes shaking {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(5deg); }
-    50% { transform: rotate(0deg); }
-    75% { transform: rotate(-5deg); }
-    100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
-
 
 #overlay-resume {
   position: absolute;

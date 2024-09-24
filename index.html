@@ -1,233 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aisal's Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/images/general/favicon.png" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/about-me.css" />
+    <link rel="stylesheet" href="./styles/projects.css" />
+    <link rel="stylesheet" href="./styles/resume.css" />
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aisal's Portfolio</title>
-  <link rel="icon" type="image/x-icon" href="/images/general/favicon.png">
-  <link rel="stylesheet" href="./styles/main.css" />
-  <link rel="stylesheet" href="./styles/about-me.css" />
-  <link rel="stylesheet" href="./styles/projects.css" />
-  <link rel="stylesheet" href="./styles/resume.css" />
-  <link rel="stylesheet" href="./styles/normalize.css" />
-  <link rel="stylesheet" href="./styles/media.css" />
-  <!-- fontawesome link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body>
-  <!-- modal box -->
-  <div id="overlay-modal">
-    <div class="modal" id="modal-tv">
-      <ul class="slides-container" id="slides-container"></ul>
-      <span class="close" id="close-modal-box">
-        <i class="fa-regular fa-circle-xmark"></i>
-      </span>
-      <button class="slide-arrow" id="slide-arrow-prev">&#8249;</button>
-      <button class="slide-arrow" id="slide-arrow-next">&#8250;</button>
+  <body>
+    <div id="overlay-modal">
+      <div class="modal" id="modal-tv">
+        <ul class="slides-container" id="slides-container"></ul>
+        <span class="close" id="close-modal-box">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </span>
+        <button class="slide-arrow" id="slide-arrow-prev">&#8249;</button>
+        <button class="slide-arrow" id="slide-arrow-next">&#8250;</button>
+      </div>
     </div>
-  </div>
-  <!-- modal box -->
-  <div class="container" id="container">
-    <!-- Burger Menu -->
-    <header>
-      <div class="made-with-love">
-        Made with<span class="heart"> &#10084; </span>by Aisal
-      </div>
-      <div class="burger-menu">
-        <i class="fas fa-bars burger"></i>
-        <nav class="menu">
-          <ul>
-            <li>
-              <a href="#" onClick="javascript:MENU.showAboutScene()"><img src="images/burger-menu-icons/account.gif"
-                  width="24px" alt="about me icon" />About me</a>
-            </li>
-            <li>
-              <a href="#" onClick="javascript:MENU.showProjectsScene()">
-                <img src="images/burger-menu-icons/folder.gif" width="24px" alt="projects icon" />Projects</a>
-            </li>
-            <li>
-              <a href="#" onClick="javascript:MENU.showResumeScene()"><img src="images/burger-menu-icons/article.gif"
-                  width="24px" alt="cv icon" />
-                Resume</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <!-- Burger Menu End -->
-    <div class="tv-set" id="tv-set">
-      <section id="about-scene" class="scene-container">
-        <div id="mountains" class="layer"></div>
-        <div id="city-panorama" class="layer"></div>
-        <div id="front-city" class="layer"></div>
-        <div id="about-billboards" class="layer">
-          <img id="about-billboard-1-arrow" class="img-set" src="images/about-me/billboard-1/billboard1.gif" />
-          <img id="about-billboard-2-girl" class="img-set" src="images/about-me/billboard-2/billboard2.png" />
-          <img id="about-billboard-3-girl" class="img-set" src="images/about-me/billboard-3/billboard3.png" />
-          <img id="about-billboard-4-balloon" class="img-set" src="images/about-me/billboard-4/billboard4.png" />
-          <img id="about-billboard-5-butterfly" class="img-set" src="images/about-me/billboard-5/billboard5.png" />
+    <div class="container" id="container">
+      <header>
+        <div class="made-with-love"> Made with<span class="heart"> &#10084; </span>by Aisal </div>
+        <div class="burger-menu">
+          <i class="fas fa-bars burger"></i>
+          <nav class="menu">
+            <ul>
+              <li>
+                <a href="#" onClick="javascript:MENU.showAboutScene()"
+                  ><img src="images/burger-menu-icons/account.gif" width="24px" alt="about me icon" />About me</a
+                >
+              </li>
+              <li>
+                <a href="#" onClick="javascript:MENU.showProjectsScene()">
+                  <img src="images/burger-menu-icons/folder.gif" width="24px" alt="projects icon" />Projects</a
+                >
+              </li>
+              <li>
+                <a href="#" onClick="javascript:MENU.showResumeScene()"
+                  ><img src="images/burger-menu-icons/article.gif" width="24px" alt="cv icon" /> Resume</a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
-        <div id="park" class="layer"></div>
-        <div id="about-road" class="road-elements layer">
-          <img class="road-cones" id="about-road-cones" src="images/common/cones.png" />
-          <img class="road-closed" id="about-road-closed" src="images/common/road-closed.png" />
-        </div>
-        <div id="grass" class="layer"></div>
-        <img id="about-skater" class="skater" src="images/skater/idle.gif" />
-      </section>
-      <!-- about-scene -->
-      <section id="projects-scene" class="scene-container">
-        <div id="projects-sky" class="layer"></div>
-        <div id="projects-mountains" class="layer"></div>
-        <div id="projects-trees-far" class="layer"></div>
-        <div id="projects-trees-middle" class="layer"></div>
-        <div id="projects-bushes" class="layer"></div>
-        <div id="projects-cable-lines" class="layer"></div>
-        <div id="projects-trees-near"></div>
-        <div id="projects-road" class="road-elements layer">
-          <img class="road-cones" id="projects-road-cones" src="images/common/cones.png" />
-          <img class="road-closed" id="projects-road-closed" src="images/common/road-closed.png" />
-        </div>
-        <div id="projects-street-lights" class="layer">
-          <div id="projects-street-light-1" class="layer projects-street-lights-styles"></div>
-          <div id="projects-street-light-2" class="layer projects-street-lights-styles"></div>
-          <div id="projects-street-light-3" class="layer projects-street-lights-styles"></div>
-          <div id="projects-street-light-4" class="layer projects-street-lights-styles"></div>
-          <div id="projects-street-light-5" class="layer projects-street-lights-styles"></div>
-        </div>
-        <div id="projects-grasses" class="layer"></div>
-        <div id="projects-sky-shadow" class="layer"></div>
-        <div id="projects-billboards" class="layer">
-          <img src="./images/projects/billboards-content/proassess.png" id="projects-billboard-1"
-            class="projects-billboards-styles" alt="proassess" />
-          <img src="./images/projects/billboards-content/tetris.png" id="projects-billboard-2"
-            class="projects-billboards-styles projects-billboards-content" alt="tetris" data-content="tetris" />
-          <img src="./images/projects/billboards-content/selectiq.png" id="projects-billboard-3"
-            class="projects-billboards-styles projects-billboards-content" alt="selectiq" />
-          <img src="./images/projects/billboards-content/research.png" id="projects-billboard-4"
-            class="projects-billboards-styles projects-billboards-content" alt="research" />
-          <img src="./images/projects/billboards-content/gamefolio.png" id="projects-billboard-5"
-            class="projects-billboards-styles" alt="gamefolio" />
-        </div>
-        <!-- project-billboards -->
-        <img id="projects-skater" class="skater" src="images/skater/idle.gif" />
-      </section>
-      <!-- projects-scene end -->
-      <!-- resume -->
-      <!-- class="scene-container" -->
-      <section id="resume-scene" class="scene-container">
-        <div class="resume-header">
-          <img src="images/resume/avatar.png" alt="">
-        </div>
-        <!-- sdelala -->
-        <div class="middle">
-          <div class="middle_first middle_style">
-            <aside class="aside">
-              <div class="contacts">
-                <figure class="location">
-                  <img src="https://cdn3.iconfinder.com/data/icons/flags-circle/100/USA_-512.png" alt="location icon">
-                  <figcaption class="country">Chicago, USA</figcaption>
-                </figure>
-                <figure class="github">
-                  <img src="images/resume/github.svg" alt="github icon">
-                  <figcaption><a href="https://github.com/atilebalieva">github.com/atilebalieva</a></figcaption>
-                </figure>
-                <figure class="linkedin">
-                  <img src="images/resume/linkedin.svg" alt="linkedin icon">
-                  <figcaption><a href="www.linkedin.com/in/aisal-code">linkedin.com/in/aisal-code
-                    </a></figcaption>
-                </figure>
-                <figure class="envelop">
-                  <img src="images/resume/envelop.svg" alt="envelop icon">
-                  <figcaption><a href="mailto:me@aisalcode.com">me@aisalcode.com</a></figcaption>
-                </figure>
-                <figure class="github">
-                  <img src="images/resume/web.svg" alt="web icon">
-                  <figcaption><a href="https://aisalcode.com">https://aisalcode.com
-                    </a></figcaption>
-                </figure>
+      </header>
+      <div class="tv-set" id="tv-set">
+        <section id="about-scene" class="scene-container">
+          <div id="mountains" class="layer"></div>
+          <div id="city-panorama" class="layer"></div>
+          <div id="front-city" class="layer"></div>
+          <div id="about-billboards" class="layer">
+            <img id="about-billboard-1-arrow" class="img-set" src="images/about-me/billboard-1/billboard1.gif" />
+            <img id="about-billboard-2-girl" class="img-set" src="images/about-me/billboard-2/billboard2.png" />
+            <img id="about-billboard-3-girl" class="img-set" src="images/about-me/billboard-3/billboard3.png" />
+            <img id="about-billboard-4-balloon" class="img-set" src="images/about-me/billboard-4/billboard4.png" />
+            <img id="about-billboard-5-butterfly" class="img-set" src="images/about-me/billboard-5/billboard5.png" />
+          </div>
+          <div id="park" class="layer"></div>
+          <div id="about-road" class="road-elements layer">
+            <img class="road-cones" id="about-road-cones" src="images/common/cones.png" />
+            <img class="road-closed" id="about-road-closed" src="images/common/road-closed.png" />
+          </div>
+          <div id="grass" class="layer"></div>
+          <img id="about-skater" class="skater" src="images/skater/idle.gif" />
+        </section>
+        <section id="projects-scene" class="scene-container">
+          <div id="projects-sky" class="layer"></div>
+          <div id="projects-mountains" class="layer"></div>
+          <div id="projects-trees-far" class="layer"></div>
+          <div id="projects-trees-middle" class="layer"></div>
+          <div id="projects-bushes" class="layer"></div>
+          <div id="projects-cable-lines" class="layer"></div>
+          <div id="projects-trees-near"></div>
+          <div id="projects-road" class="road-elements layer">
+            <img class="road-cones" id="projects-road-cones" src="images/common/cones.png" />
+            <img class="road-closed" id="projects-road-closed" src="images/common/road-closed.png" />
+          </div>
+          <div id="projects-street-lights" class="layer">
+            <div id="projects-street-light-1" class="layer projects-street-lights-styles"></div>
+            <div id="projects-street-light-2" class="layer projects-street-lights-styles"></div>
+            <div id="projects-street-light-3" class="layer projects-street-lights-styles"></div>
+            <div id="projects-street-light-4" class="layer projects-street-lights-styles"></div>
+            <div id="projects-street-light-5" class="layer projects-street-lights-styles"></div>
+          </div>
+          <div id="projects-grasses" class="layer"></div>
+          <div id="projects-sky-shadow" class="layer"></div>
+          <div id="projects-billboards" class="layer">
+            <img
+              src="./images/projects/billboards-content/proassess.png"
+              id="projects-billboard-1"
+              class="projects-billboards-styles"
+              alt="proassess"
+            />
+            <img
+              src="./images/projects/billboards-content/tetris.png"
+              id="projects-billboard-2"
+              class="projects-billboards-styles projects-billboards-content"
+              alt="tetris"
+              data-content="tetris"
+            />
+            <img
+              src="./images/projects/billboards-content/selectiq.png"
+              id="projects-billboard-3"
+              class="projects-billboards-styles projects-billboards-content"
+              alt="selectiq"
+            />
+            <img
+              src="./images/projects/billboards-content/research.png"
+              id="projects-billboard-4"
+              class="projects-billboards-styles projects-billboards-content"
+              alt="research"
+            />
+            <img
+              src="./images/projects/billboards-content/gamefolio.png"
+              id="projects-billboard-5"
+              class="projects-billboards-styles"
+              alt="gamefolio"
+            />
+          </div>
+          <img id="projects-skater" class="skater" src="images/skater/idle.gif" />
+        </section>
+        <section id="resume-scene" class="scene-container">
+          <div class="resume-header">
+            <img src="images/resume/avatar.png" alt="" />
+          </div>
+          <div class="middle">
+            <div class="middle_first middle_style">
+              <aside class="aside">
+                <div class="contacts">
+                  <figure class="location">
+                    <img
+                      src="https://cdn3.iconfinder.com/data/icons/flags-circle/100/USA_-512.png"
+                      alt="location icon"
+                    />
+                    <figcaption class="country">United States</figcaption>
+                  </figure>
+                  <figure class="github">
+                    <img src="images/resume/github.svg" alt="github icon" />
+                    <figcaption
+                      ><a href="https://github.com/atilebalieva" target="_blank">github.com/atilebalieva</a></figcaption
+                    >
+                  </figure>
+                  <figure class="linkedin">
+                    <img src="images/resume/linkedin.svg" alt="linkedin icon" />
+                    <figcaption
+                      ><a href="https://linkedin.com/in/aisal-code" target="_blank"
+                        >linkedin.com/in/aisal-code
+                      </a></figcaption
+                    >
+                  </figure>
+                  <figure class="envelop">
+                    <img src="images/resume/envelop.svg" alt="envelop icon" />
+                    <figcaption
+                      ><a href="mailto:aitilebalieva@gmail.com" target="_blank">aitilebalieva@gmail.com</a></figcaption
+                    >
+                  </figure>
+                  <figure class="github">
+                    <img src="images/resume/web.svg" alt="web icon" />
+                    <figcaption><a href="https://aisal.me" target="_blank">https://aisal.me </a></figcaption>
+                  </figure>
+                </div>
+              </aside>
+              <div class="main_content-info resume-skills">
+                <h3 class="resume-subtitle">Skills</h3>
+                <ul class="resume-skills-content">
+                  <li>React.js</li>
+                  <li>Next.js</li>
+                  <li>Redux</li>
+                  <li>JavaScript</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Typescript</li>
+                  <li>SASS</li>
+                  <li>Bootsrtap</li>
+                  <li>Material UI</li>
+                  <li>jQuery</li>
+                  <li>Git</li>
+                  <li>Github</li>
+                  <li>Restful API</li>
+                  <li>Postman</li>
+                  <li>Tailwind</li>
+                  <li>Scrum</li>
+                  <li>Jira</li>
+                  <li>Photoshop</li>
+                  <li>Figma</li>
+                </ul>
               </div>
-            </aside>
-            <div class="main_content-info resume-skills">
-              <h3 class="resume-subtitle">Skills</h3>
-              <ul class="resume-skills-content">
-                <li>React.js</li>
-                <li>JavaScript</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Typescript</li>
-                <li>SASS</li>
-                <li>Bootsrtap</li>
-                <li>jQuery</li>
-                <li>Git</li>
-                <li>Github</li>
-                <li>Restful</li>
-                <li>Postman</li>
-                <li>Tailwind</li>
-                <li>Scrum</li>
-                <li>Jira</li>
-                <li>Photoshop</li>
-              </ul>
             </div>
+            <!--             <div class="middle_second middle_style">
+              <div class="main_content-info resume-education">
+                <h3 class="resume-subtitle">Education</h3>
+                <ul class="resume-experience-content">
+                  <li>04/2021 - 01/2022, Front End Development Bootcamp (Kyrgyzstan, remote).</li>
+                </ul>
+              </div>
+              <div class="main_content-info resume-experience">
+                <h3 class="resume-subtitle">Experience</h3>
+                <ul class="resume-experience-content">
+                  <li>02/2022 - Present, Front End Developer, Gulchynar Ltd (Kyrgyzstan, remote)</li>
+                </ul>
+              </div>
+            </div> -->
           </div>
-          <div class="middle_second middle_style">
-            <div class="main_content-info resume-education">
-              <h3 class="resume-subtitle">Education</h3>
-              <ul class="resume-experience-content">
-                <li>04/2021 - 01/2022, Front End Development Bootcamp (Kyrgyzstan, remote).</li>
-              </ul>
-            </div>
-            <div class="main_content-info resume-experience">
-              <h3 class="resume-subtitle">Experience</h3>
-              <ul class="resume-experience-content">
-                <li>02/2022 - Present, Front End Developer, Gulchynar Ltd (Kyrgyzstan, remote)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <footer class="footer">
-          <a href="images/resume/aisal-resume.pdf" download id="overlay-resume-2">
-            <p>DOWNLOAD FULL RESUME</p>
-            <img src="images/resume/pdf.png" alt="pdf">
-          </a>
-        </footer>
-      </section>
-      <div id="white-noise"></div>
-      <div class="switch-buttons"></div>
-      <p id="about-me-btn" class="menu-style"></p>
-      <p id="projects-btn" class="menu-style"></p>
-      <p id="resume-btn" class="menu-style"></p>
-      <div id="overlay-billboard"></div>
-      <a href="images/resume/aisal-resume.pdf" download id="overlay-resume"></a>
+          <footer class="footer">
+            <a href="images/resume/aisal-resume.pdf" download id="overlay-resume-2">
+              <p>DOWNLOAD FULL RESUME</p>
+              <img src="images/resume/pdf.png" alt="pdf" />
+            </a>
+          </footer>
+        </section>
+        <div id="white-noise"></div>
+        <div class="switch-buttons"></div>
+        <p id="about-me-btn" class="menu-style"></p>
+        <p id="projects-btn" class="menu-style"></p>
+        <p id="resume-btn" class="menu-style"></p>
+        <div id="overlay-billboard"></div>
+        <a href="images/resume/aisal-resume.pdf" download id="overlay-resume"></a>
+      </div>
+      <div class="tv-stand" id="tv-stand">
+        <img src="images/general/clock.png" alt="clock" class="clock" />
+        <img src="images/general/radio.png" alt="radio" class="radio" />
+      </div>
     </div>
-    <!-- tv-set -->
-    <div class="tv-stand" id="tv-stand">
-      <img src="images/general/clock.png" alt="clock" class="clock" />
-      <img src="images/general/radio.png" alt="radio" class="radio" />
-    </div>
-  </div>
-  <!-- container-->
 
-  <script src="./scripts/hammer.js"></script>
-  <script src="./scripts/globals.js"></script>
-  <script src="./scripts/Screen.js"></script>
-  <script src="./scripts/Skater.js"></script>
-  <script src="./scripts/KeyHandler.js"></script>
-  <script src="./scripts/TouchHandler.js"></script>
-  <script src="./scripts/Timer.js"></script>
-  <script src="./scripts/ProjectsScene.js"></script>
-  <script src="./scripts/AboutScene.js"></script>
-  <script src="./scripts/ResumeScene.js"></script>
-  <script src="./scripts/SceneWrapper.js"></script>
-  <script src="./scripts/Menu.js"></script>
-  <script src="./scripts/Modal.js"></script>
-  <script src="./scripts/main.js"></script>
-  <script src="./scripts/burgerMenu.js"></script>
-</body>
-
+    <script src="./scripts/hammer.js"></script>
+    <script src="./scripts/globals.js"></script>
+    <script src="./scripts/Screen.js"></script>
+    <script src="./scripts/Skater.js"></script>
+    <script src="./scripts/KeyHandler.js"></script>
+    <script src="./scripts/TouchHandler.js"></script>
+    <script src="./scripts/Timer.js"></script>
+    <script src="./scripts/ProjectsScene.js"></script>
+    <script src="./scripts/AboutScene.js"></script>
+    <script src="./scripts/ResumeScene.js"></script>
+    <script src="./scripts/SceneWrapper.js"></script>
+    <script src="./scripts/Menu.js"></script>
+    <script src="./scripts/Modal.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/burgerMenu.js"></script>
+  </body>
 </html>
