@@ -7,15 +7,6 @@ class ProjectsScene {
     {
       image: getById("projects-billboard-2"),
     },
-    {
-      image: getById("projects-billboard-3"),
-    },
-    {
-      image: getById("projects-billboard-4"),
-    },
-    {
-      image: getById("projects-billboard-5"),
-    },
   ];
   #currentStop = null;
   #skaterImg = getById("projects-skater");
@@ -49,15 +40,10 @@ class ProjectsScene {
   // Returns true if the scene can move in a given direction.
   canMove(direction) {
     const skater = this.#skaterImg.getBoundingClientRect();
-    const roadEnd = getById("projects-road-closed").getBoundingClientRect()
-      .left;
-    const roadStart = getById("projects-road-cones").getBoundingClientRect()
-      .right;
+    const roadEnd = getById("projects-road-closed").getBoundingClientRect().left;
+    const roadStart = getById("projects-road-cones").getBoundingClientRect().right;
 
-    if (
-      (direction === 1 && skater.right > roadEnd) ||
-      (direction === -1 && skater.left < roadStart)
-    ) {
+    if ((direction === 1 && skater.right > roadEnd) || (direction === -1 && skater.left < roadStart)) {
       // Reached the end or the start of the scene.
       return false;
     }
@@ -91,10 +77,7 @@ class ProjectsScene {
       const billboard = this.#currentStop.image.getBoundingClientRect(); // billboard's position relative to viewport
       // There is the current stop. "Unmark" the current stop when the scene goes out of the current stop,
       // so the scene can properly stop again when comes back.
-      if (
-        (direction === 1 && billboard.right < skater.right) ||
-        (direction === -1 && billboard.left > skater.left)
-      ) {
+      if ((direction === 1 && billboard.right < skater.right) || (direction === -1 && billboard.left > skater.left)) {
         this.#handleImage();
         this.#currentStop = null;
       }
@@ -117,10 +100,7 @@ class ProjectsScene {
       const stop = this.#stops[i];
       const billboard = stop.image.getBoundingClientRect();
       const padding = billboard.width * 0.24; //Padding variable helps to show interval where skater should stop(center of billboard) on defferent screens.
-      if (
-        skater.left >= billboard.left + padding &&
-        skater.right <= billboard.right - padding
-      ) {
+      if (skater.left >= billboard.left + padding && skater.right <= billboard.right - padding) {
         return stop;
       }
     }
