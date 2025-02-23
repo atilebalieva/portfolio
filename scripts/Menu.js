@@ -3,23 +3,19 @@ class Menu {
     getById("about-me-btn").addEventListener("click", () => {
       this.#showWhiteNoise();
       this.showAboutScene();
-      document.querySelector(".switch-buttons").style.backgroundImage =
-        "url(images/general/menu-about-me.png)";
+      document.querySelector(".switch-buttons").style.backgroundImage = "url(images/general/menu-about-me.png)";
     });
 
     getById("projects-btn").addEventListener("click", () => {
       this.#showWhiteNoise();
       this.showProjectsScene();
-      document.querySelector(".switch-buttons").style.backgroundImage =
-        "url(images/general/menu-projects.png)";
+      document.querySelector(".switch-buttons").style.backgroundImage = "url(images/general/menu-projects.png)";
     });
 
     getById("resume-btn").addEventListener("click", () => {
       this.#showWhiteNoise();
       this.showResumeScene();
-      document.querySelector(".switch-buttons").style.backgroundImage =
-        "url(images/general/menu-resume.png)";
-      document.getElementById("overlay-resume").style.display = "block";
+      document.querySelector(".switch-buttons").style.backgroundImage = "url(images/general/menu-resume.png)";
     });
   }
 

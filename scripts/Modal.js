@@ -10,7 +10,7 @@ const tv = getById("tv-set");
 const tvStand = getById("tv-stand");
 const modalBoxContents = [
   {
-    name: "projects-billboard-2",
+    name: "projects-billboard-1",
     html: `<li class="slide">
     <img
       src="/images/projects/modal/modal-content/tetris/00.png"
@@ -41,7 +41,7 @@ const modalBoxContents = [
   </li>`,
   },
   {
-    name: "projects-billboard-5",
+    name: "projects-billboard-2",
     html: `<li class="slide">
     <img
       src="/images/projects/modal/modal-content/gamefolio/00.png"
