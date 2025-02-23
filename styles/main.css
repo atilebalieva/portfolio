@@ -7,7 +7,7 @@
 }
 
 html {
-  overflow:hidden;
+  overflow: hidden;
 }
 
 body {
@@ -50,20 +50,18 @@ body {
   position: relative;
   top: 6%;
   left: 6%;
-  overflow:hidden;
+  overflow: hidden;
   /* overflow-y:scroll;
   overflow-x: hidden; */
   /* add change this property overflow-y:scroll; overflow-x: hidden in JS later resume */
-  
 }
 
 .tv-stand {
-  height: 100%;
-  width: 2700px;
+  height: 50%;
+  width: 100%;
   background: url(../images/general/shelf.png) no-repeat;
   background-size: contain;
   bottom: 2%;
-  left: -40%;
   display: none;
   position: relative;
 }
