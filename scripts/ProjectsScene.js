@@ -99,13 +99,11 @@ class ProjectsScene {
     for (let i = 0; i < this.#stops.length; i++) {
       const stop = this.#stops[i];
       const billboard = stop.image.getBoundingClientRect();
-      const padding = billboard.width * 0.24; //Padding variable helps to show interval where skater should stop(center of billboard) on defferent screens.
-      if (skater.left >= billboard.left + padding && skater.right <= billboard.right - padding) {
+      const padding = billboard.width * 0.24;
+      if (skater.left + 5 >= billboard.left + padding && skater.right - 5 <= billboard.right - padding) {
         return stop;
       }
     }
-
-    // Not within any of stops.
     return null;
   }
 
@@ -115,6 +113,6 @@ class ProjectsScene {
   }
 
   getStopId() {
-    return this.#currentStop.image.id;
+    return this.#currentStop?.image?.id || null;
   }
 }

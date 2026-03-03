@@ -56,6 +56,7 @@ function showModalBox() {
   const billboardId = PROJECTS_SCENE.getStopId();
 
   if (billboardId === null) return;
+
   for (let i = 0; i < modalBoxContents.length; i++) {
     if (billboardId === modalBoxContents[i].name) {
       const modalContent = getById("slides-container");
